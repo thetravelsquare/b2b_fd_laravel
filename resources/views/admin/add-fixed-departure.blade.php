@@ -1,0 +1,171 @@
+@extends('admin.header')
+
+@section('content')
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                            <!--Begin::Dashboard 1-->
+                            <!--Begin::Row-->
+                            <div class="row">
+                                <div class="col-lg-12 col-xl-12 ">
+                                    <div class="kt-portlet">
+                                        <div class="kt-portlet__head">
+                                            <div class="kt-portlet__head-label">
+                                                <h3 class="kt-portlet__head-title">
+                                                    Add Fixed Departure
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <!--begin::Form-->
+                                        <form action="{{ route('admin.add_fixed_departure') }}" class="kt-form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                        @csrf
+                                            <div class="kt-portlet__body">
+                                            <p></p>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Airline</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="airline" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Flight Number</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text"  name="flight_no" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Departure(From)</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="departure_from" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Arrival(To)</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="arrival_to" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Departure Time </label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="departure_time" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Arrival Time</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="arrival_time" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Departure Date</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="departure_date" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Arrival Date</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="arrival_date" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Journey Type</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="journey_type" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Flight Type</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="flight_type" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Baggage Policy</label>
+                                                    <div class="col-6">
+                                                        <!-- <input class="form-control" type="text" name="baggage_policy" id="example-number-input" /> -->
+                                                        <textarea name="baggage_policy" id="" cols="30" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">FD ID</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="fd_id" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Sector</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="sector" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">International/Domestic</label>
+                                                    <div class="col-6">
+                                                    <div class="form-group">
+														<!-- <label>Select Number of Passengers</label> -->
+														<div></div>
+														<select name="international_or_domestic" class="custom-select form-control" required>
+															<option value="" selected="selected">Select</option>
+															<option value="International">International</option>
+															<option value="Domestic">Domestic</option>
+														</select>
+													</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Adult Fare</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="adult_fare" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Child Fare</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="child_fare" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Service Fee</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="service_fee" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Fare Type</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="fare_type" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Rescheduling Fee</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="rescheduling_fee" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="example-number-input" class="col-2 col-form-label">Enter Cancellation Fee</label>
+                                                    <div class="col-6">
+                                                        <input class="form-control" type="text" name="cancellation_fee" id="example-number-input" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="kt-portlet__foot">
+                                                <div class="kt-form__actions">
+                                                    <button type="submit" class="btn btn-primary">Add Fixed Departure</button>
+                                                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Portlet-->
+
+                                </div>
+                            </div>
+                            <!--End::Row-->
+                            <!--Begin::Row-->
+                            
+                            <!--End::Row-->
+                            <!--End::Dashboard 1-->	
+                        </div>
+@endsection
