@@ -302,7 +302,7 @@ top: 0;
 
                                 
                                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.transactions') }}" class="kt-menu__link kt-menu__toggle">
+                                    <a href="{{ route('admin.manageTransactions') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -335,7 +335,7 @@ top: 0;
                                 </li>
 
                                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.fixed_departure') }}" class="kt-menu__link kt-menu__toggle">
+                                    <a href="{{ route('admin.managefd') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -659,7 +659,7 @@ top: 0;
                                     <div class="kt-header__topbar-user">
                                         <span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
                                         <span class="kt-header__topbar-username kt-hidden-mobile">Admin</span>
-                                        <span class="kt-header__topbar-username kt-hidden-mobile"><small>Logout</small></span>
+                                        {{-- <span class="kt-header__topbar-username kt-hidden-mobile"><small>Logout</small></span> --}}
                                         <img class="kt-hidden" alt="Pic" src="./files/300_25.jpg">
                                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">FD</span>
@@ -673,9 +673,9 @@ top: 0;
                                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                                             <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">FD</span>
                                         </div>
-                                        <!-- <div class="kt-user-card__name">
-                                            Mr. Aman Roy
-                                        </div> -->
+                                        <div class="kt-user-card__name">
+                                            <a href="{{ route('logout') }}">Logout</a>
+                                        </div>
                                     </div>
                                     <!--end: Head -->
                                     <!--begin: Navigation -->

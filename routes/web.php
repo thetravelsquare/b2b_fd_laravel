@@ -55,6 +55,7 @@ Route::get('/admin/add-transactions', [AdminController::class, 'transactions'])-
 Route::post('/admin/add-transactions', [AdminController::class, 'addTransactions'])->name('admin.add_transactions');
 Route::get('/admin/manage-transactions', [AdminController::class, 'manageTransactions'])->name('admin.manageTransactions');
 Route::get('/admin/fixed-departure', [AdminController::class, 'fixed_departure'])->name('admin.fixed_departure');
+Route::get('/admin/manage-fd', [AdminController::class, 'manageFd'])->name('admin.managefd');
 Route::post('/admin/add-fd', [AdminController::class, 'addFixedDeparture'])->name('admin.add_fixed_departure');
 Route::get('/admin/refund-requests', [AdminController::class, 'refundRequest'])->name('admin.refund_request');
 

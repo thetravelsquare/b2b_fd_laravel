@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Booking;
+use App\Models\User;
 use App\Models\Refund;
 use App\Models\Transaction;
 use App\Models\FixedDeparture;
@@ -13,7 +14,8 @@ class AdminController extends Controller
 {
     public function dashboard(){
         if(Auth::user()->user_type == 'admin'){
-            return view('admin.index');
+            $users = User::where('user_type', 'partner')->get();
+            return view('admin.index', compact('users'));
         }
         return view('dashboard');
     }
@@ -115,8 +117,13 @@ class AdminController extends Controller
     }
 
     public function manageTransactions(){
-        $transactions = Transaction::orderBy('e', 'desc')->get();
+        $transactions = Transaction::orderBy('id', 'desc')->get();
         return view('admin.manage-transactions', compact('transactions'));
+    }
+    
+    public function manageFd(){
+        $fds = FixedDeparture::orderBy('id', 'desc')->get();
+        return view('admin.manage-fd', compact('fds'));
     }
     public function addFixedDeparture(Request $request){
         $validate = $request->validate([

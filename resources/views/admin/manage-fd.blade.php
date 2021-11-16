@@ -7,7 +7,7 @@
 							<div class="kt-container  kt-container--fluid ">
 								<div class="kt-subheader__main">
 									<h3 class="kt-subheader__title">
-										All Transactions                            
+										All Fixed Departure                            
 									</h3>
 									
 								</div>
@@ -29,40 +29,37 @@
 																														                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 10; width: 90%; background-color:white;">
                                                 <thead>
                                                     <tr>
-														<th>Partner ID</th>
-														<th>Transaction ID</th>
-														<th>Payment ID</th>
-														<th>Booking ID</th>
-														<th>Mode</th>
-														<th>Amount</th>
-                                                        <th>Status</th>
-														<th>Invoice</th>
-                                                        <th>FD ID</th>
+														<th>Airline</th>
+														<th>Flight No.</th>
+														<th>Departure From</th>
+														<th>Arrival To</th>
+														<th>Departure Time</th>
+														<th>Arrival Time</th>
+                                                        <th>Departure Date</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($transactions as $transaction)
+                                                    @foreach($fds as $fd)
                                                     <tr>
-                                                        <td>{{ $transaction->partner_id}}</td>	
-                                                        <td>{{ $transaction->transaction_id}}</td>	
-                                                        <td>{{ $transaction->payment_id }}</td>	
-                                                        <td>{{ $transaction->booking_id }}</td>	
-                                                        <td>{{ $transaction->mode }}</td>	
-                                                        <td>{{ $transaction->amount }}</td>	
-                                                        <td>{{ $transaction->status }}</td>	
-                                                        <td>{{ $transaction->invoice }}</td>	
-                                                        <td>{{ $transaction->fd_id }}</td>	
-                                                        <!-- <td><button  data-toggle="modal" data-target="#myModal-{{ $transaction->id }}" class="btn btn-primary">Details</button></td> -->
+                                                        <td>{{ $fd->airline }}</td>	
+                                                        <td>{{ $fd->flight_no }}</td>	
+                                                        <td>{{ $fd->departure_from }}</td>	
+                                                        <td>{{ $fd->arrival_to }}</td>	
+                                                        <td>{{ $fd->departure_time }}</td>	
+                                                        <td>{{ $fd->arrival_time }}</td>	
+                                                        <td>{{ $fd->departure_date }}</td>  
+                                                        <td><button  data-toggle="modal" data-target="#myModal-{{ $fd->id }}" class="btn btn-primary">Details</button></td>
                                                     </tr>                                  
                                                     
                                                     <!-- The Modal -->
-                                                    <div class="modal" id="myModal-{{ $transaction->id }}">
+                                                    <div class="modal" id="myModal-{{ $fd->id }}">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
 
                                                         <!-- Modal Header -->
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Booking Details</h4>
+                                                            <h4 class="modal-title">FD Details</h4>
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
 
@@ -71,66 +68,50 @@
                                                             <div class="container">
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Partner ID</label>
+                                                                        <label for="partner_id">Airline</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->partner_id }}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="partner_id">Transaction ID</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        {{ $transaction->transaction_id }}
+                                                                        {{ $fd->airline }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Date</label>
+                                                                        <label for="partner_id">Flight No</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->date }}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="partner_id">Customer Name</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        {{ $transaction->customer_name }}
+                                                                        {{ $fd->flight_no }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">PNR</label>
+                                                                        <label for="partner_id">Departure From</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->pnr }}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="partner_id">Departure</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        {{ $transaction->departure }}
+                                                                        {{ $fd->departure_from }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Arrival</label>
+                                                                        <label for="partner_id">Arrival To</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->arrival }}
+                                                                        {{ $fd->arrival_to }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Type</label>
+                                                                        <label for="partner_id">Departure Time</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->type }}
+                                                                        {{ $fd->departure_time }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Arrival Time</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->arrival_time }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -138,7 +119,7 @@
                                                                         <label for="partner_id">Departure Date</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->departure_date }}
+                                                                        {{ $fd->departure_date }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -146,31 +127,31 @@
                                                                         <label for="partner_id">Arrival Date</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->arrival_date }}
+                                                                        {{ $fd->arrival_date }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Amount</label>
+                                                                        <label for="partner_id">Journey Type</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->amount }}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <label for="partner_id">Voucher</label>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        {{ $transaction->voucher }}
+                                                                        {{ $fd->journey_type }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Payment ID</label>
+                                                                        <label for="partner_id">Flight Type</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->payment_id }}
+                                                                        {{ $fd->flight_type }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Baggage Policy</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->baggage_policy }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
@@ -178,15 +159,71 @@
                                                                         <label for="partner_id">FD ID</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->fd_id }}
+                                                                        {{ $fd->fd_id }}
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        <label for="partner_id">Pax</label>
+                                                                        <label for="partner_id">Sector</label>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                        {{ $transaction->pax }}
+                                                                        {{ $fd->sector }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">International Or Domestic</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->international_or_domestic }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Adult Fare</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->adult_fare }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Child Fare</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->child_fare }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Service Fee</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->service_fee }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Fare Type</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->fare_type }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Rescheduling Fee</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->rescheduling_fee }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <label for="partner_id">Cancellation Fee</label>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        {{ $fd->cancellation_fee }}
                                                                     </div>
                                                                 </div>
                                                             </div>

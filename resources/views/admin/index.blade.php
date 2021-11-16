@@ -35,56 +35,19 @@
                                                         <th>Ac. Manager Name</th>
 														<th>Company Mail ID</th>
                                                         <th>Contact No</th>
-                                                        <th>BOOKING</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($users as $user)
                                                         <tr>
-                                                            <td>Vibhu Gupta<br></td>	
-                                                            <td>The Travel Square<br></td>
-                                                            <td>Sahadra</td>
-                                                            <td>Vibhu</td>
-                                                            <td>vibhu@gmail.com</td>
-                                                            <td>8700571934</td>                                                                               
-                                                            <td>Booking Id</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Vibhu Gupta<br></td>	
-                                                            <td>The Travel Square<br></td>
-                                                            <td>Sahadra</td>
-                                                            <td>Vibhu</td>
-                                                            <td>vibhu@gmail.com</td>
-                                                            <td>8700571934</td>                                                                               
-                                                            <td>Booking Id</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Vibhu Gupta<br></td>	
-                                                            <td>The Travel Square<br></td>
-                                                            <td>Sahadra</td>
-                                                            <td>Vibhu</td>
-                                                            <td>vibhu@gmail.com</td>
-                                                            <td>8700571934</td>                                                                               
-                                                            <td>Booking Id</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Vibhu Gupta<br></td>	
-                                                            <td>The Travel Square<br></td>
-                                                            <td>Sahadra</td>
-                                                            <td>Vibhu</td>
-                                                            <td>vibhu@gmail.com</td>
-                                                            <td>8700571934</td>                                                                               
-                                                            <td>Booking Id</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Vibhu Gupta<br></td>	
-                                                            <td>The Travel Square<br></td>
-                                                            <td>Sahadra</td>
-                                                            <td>Vibhu</td>
-                                                            <td>vibhu@gmail.com</td>
-                                                            <td>8700571934</td>                                                                               
-                                                            <td>Booking Id</td>
-                                                        </tr>
-													
+                                                            <td>{{ $user->partner_id }}</td>	
+                                                            <td>{{ $user->company_name }}</td>	
+                                                            <td>{{ $user->company_address }}</td>	
+                                                            <td>{{ $user->ac_manager_name }}</td>	
+                                                            <td>{{ $user->email }}</td>	
+                                                            <td>{{ $user->phone }}</td>	
+                                                        </tr>                                   
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         	
