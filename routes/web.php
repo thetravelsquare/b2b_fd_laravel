@@ -56,4 +56,7 @@ Route::post('/autocrat/add-fd', [AdminController::class, 'addFixedDeparture'])->
 Route::get('/autocrat/refund-requests', [AdminController::class, 'refundRequest'])->name('admin.refund_request')->middleware('auth');
 Route::get('/autocrat/group-fare-requests', [GroupFareController::class, 'adminGroupFareRequest'])->name('admin.group_fare-requests')->middleware(['auth']);
 Route::post('/autocrat/add-group-fare/{id}', [GroupFareController::class, 'addGroupFareRequest'])->name('admin.add-group-fare')->middleware(['auth']);
+
+Route::get('file-import-export', [FixedDepartureController::class, 'fileImportExport'])->name('bulk-upload');
+Route::post('file-import', [FixedDepartureController::class, 'fileImport'])->name('file-import');
 // Add show bookings, transactions, fixed departures
