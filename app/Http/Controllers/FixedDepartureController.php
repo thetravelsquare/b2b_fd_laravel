@@ -17,8 +17,4 @@ class FixedDepartureController extends Controller
         $international_fd = FixedDeparture::where('international_or_domestic', 'international')->get();
         return view('international', compact('international_fd'));
     }
-    
-    public function group_fare(){
-        return view('group-fare');
-    }
 }

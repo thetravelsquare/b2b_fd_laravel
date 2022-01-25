@@ -49,7 +49,7 @@ class RegisteredUserController extends Controller
             'ac_manager_name' => $request->ac_manager_name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'partner_id' => 'partner',
+            'partner_id' => 'TTS'.$request->phone,
             'password' => Hash::make($request->password),
         ]);
         event(new Registered($user));

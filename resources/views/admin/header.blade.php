@@ -1,277 +1,365 @@
-
+<?php 
+    if(Auth::user()->user_type != 'admin'){
+        ?>
+<script>
+    window.location.href = "/dashboard"
+</script>
+<?php
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <!-- begin::Head -->
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- begin::Head -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<title>Partner Dashboard | B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com</title>
+    <title>Partner Dashboard | B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators |
+        b2bfixeddepartures.com</title>
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-<meta name="description" content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-<meta name="distribution" content="global">
-<meta name="country" content="india">
-<meta name="copyright" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-<meta name="revisit-after" content="1 Second">
-<meta name="designer" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-<meta name="language" content="english">
-<meta name="robots" content="index, follow">
-<meta name="rating" content="general">
-<meta name="publisher" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta name="description"
+        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+    <meta name="distribution" content="global">
+    <meta name="country" content="india">
+    <meta name="copyright"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta name="revisit-after" content="1 Second">
+    <meta name="designer"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta name="language" content="english">
+    <meta name="robots" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="publisher"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
 
-<meta property="og:title" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-<meta property="og:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
-<meta property="og:url" content="http://b2bfixeddepartures.com/">
-<meta property="og:description"
-    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+    <meta property="og:title"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta property="og:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
+    <meta property="og:url" content="http://b2bfixeddepartures.com/">
+    <meta property="og:description"
+        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
 
-<meta name="twitter:title" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-<meta name="twitter:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
-<meta name="twitter:description"
-    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-			that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-			the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-<meta name="twitter:card"
-    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+    <meta name="twitter:title"
+        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+    <meta name="twitter:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
+    <meta name="twitter:description" content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+   that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+   the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+    <meta name="twitter:card"
+        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
 
-<meta name="keywords"
-    content="B2B Fixed Departure, Cheap Fixed Departure, Fixed Departure, FD, Book FD, Maldives FD, Goa Fixed Departure, Pre-Purchased Flight, Consolidated Rates,
-	Airline Consilidator, B2B Group Fare, Group Fare, Dubai Fixed Departure">
-<meta name="format-detection" content="8595902759">
+    <meta name="keywords" content="B2B Fixed Departure, Cheap Fixed Departure, Fixed Departure, FD, Book FD, Maldives FD, Goa Fixed Departure, Pre-Purchased Flight, Consolidated Rates,
+ Airline Consilidator, B2B Group Fare, Group Fare, Dubai Fixed Departure">
+    <meta name="format-detection" content="8595902759">
 
-<meta property="fb:app_id" content="520084915232338" />
-<meta name="twitter:site" content="@fixeddepartureflights.com">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE16CRYW41"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-EE16CRYW41');
-</script>
+    <meta property="fb:app_id" content="520084915232338" />
+    <meta name="twitter:site" content="@fixeddepartureflights.com">
 
 
-<!--begin::Fonts -->
-<link rel="stylesheet" href="http://partner.thetravelsquare.in/resource/admin/files/css">
-<!--end::Fonts -->
 
-<!--begin::Page Custom Styles(used by this page) -->
-<link href="http://partner.thetravelsquare.in/resource/admin/files/login-1.css" rel="stylesheet" type="text/css">
-<!--end::Page Custom Styles -->
-<link href="" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE16CRYW41"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-<!--begin::Global Theme Styles(used by all pages) -->
-<link href="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.css" rel="stylesheet" type="text/css">
-<link href="http://partner.thetravelsquare.in/resource/admin/files/style.bundle.css" rel="stylesheet" type="text/css">
-<!--end::Global Theme Styles -->
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-            <!--begin::Page Vendors Styles(used by this page) -->
-<link href="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
-                <!--end::Page Vendors Styles -->
-
-<!--begin::Layout Skins(used by all pages) -->
-<!--end::Layout Skins -->
-
-<!--begin::Layout Skins(used by all pages) -->
-
-<link href="http://partner.thetravelsquare.in/resource/admin/files/dark.css" rel="stylesheet" type="text/css">
-<link href="http://partner.thetravelsquare.in/resource/admin/files/dark(1).css" rel="stylesheet" type="text/css">
-<link href="http://partner.thetravelsquare.in/resource/admin/files/dark(2).css" rel="stylesheet" type="text/css">
-<link href="http://partner.thetravelsquare.in/resource/admin/files/dark(3).css" rel="stylesheet" type="text/css">        <!--end::Layout Skins -->
-
-<link rel="shortcut icon" href="https://keenthemes.com/metronic/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico">
+        gtag('config', 'G-EE16CRYW41');
+    </script>
 
 
-<link rel="shortcut icon" href="">
+    <!--begin::Fonts -->
+    <link rel="stylesheet" href="http://partner.thetravelsquare.in/resource/admin/files/css">
+    <!--end::Fonts -->
 
-<!-- Hotjar Tracking Code for keenthemes.com -->
-<script async="" src="http://partner.thetravelsquare.in/resource/admin/files/modules.3a2c212c6000288ee2ae.js.download" charset="utf-8"></script>
-<style type="text/css">
-    iframe#_hjRemoteVarsFrame {
-        display: none !important;
-        width: 1px !important;
-        height: 1px !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-    }
-</style>
-<style type="text/css">/* Chart.js */
-/*
+    <!--begin::Page Custom Styles(used by this page) -->
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/login-1.css" rel="stylesheet" type="text/css">
+    <!--end::Page Custom Styles -->
+    <link href="" rel="stylesheet" type="text/css">
+
+    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.css" rel="stylesheet"
+        type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/style.bundle.css" rel="stylesheet"
+        type="text/css">
+    <!--end::Global Theme Styles -->
+
+    <!--begin::Page Vendors Styles(used by this page) -->
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.css" rel="stylesheet"
+        type="text/css">
+    <!--end::Page Vendors Styles -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+    <!--end::Layout Skins -->
+
+    <!--begin::Layout Skins(used by all pages) -->
+
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/dark.css" rel="stylesheet" type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(1).css" rel="stylesheet" type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(2).css" rel="stylesheet" type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(3).css" rel="stylesheet" type="text/css">
+    <!--end::Layout Skins -->
+
+    <link rel="shortcut icon"
+        href="https://keenthemes.com/metronic/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico">
+
+
+    <link rel="shortcut icon" href="">
+
+    <!-- Hotjar Tracking Code for keenthemes.com -->
+    <script async="" src="http://partner.thetravelsquare.in/resource/admin/files/modules.3a2c212c6000288ee2ae.js.download"
+        charset="utf-8"></script>
+    <style type="text/css">
+        iframe#_hjRemoteVarsFrame {
+            display: none !important;
+            width: 1px !important;
+            height: 1px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        /*
 * DOM element rendering detection
 * https://davidwalsh.name/detect-node-insertion
 */
-@keyframes chartjs-render-animation {
-from { opacity: 0.99; }
-to { opacity: 1; }
-}
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99;
+            }
 
-.chartjs-render-monitor {
-animation: chartjs-render-animation 0.001s;
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-/*
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 0.001s;
+        }
+
+        /*
 * DOM element resizing detection
 * https://github.com/marcj/css-element-queries
 */
-.chartjs-size-monitor,
-.chartjs-size-monitor-expand,
-.chartjs-size-monitor-shrink {
-position: absolute;
-direction: ltr;
-left: 0;
-top: 0;
-right: 0;
-bottom: 0;
-overflow: hidden;
-pointer-events: none;
-visibility: hidden;
-z-index: -1;
-}
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1;
+        }
 
-.chartjs-size-monitor-expand > div {
-position: absolute;
-width: 1000000px;
-height: 1000000px;
-left: 0;
-top: 0;
-}
+        .chartjs-size-monitor-expand>div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0;
+        }
 
-.chartjs-size-monitor-shrink > div {
-position: absolute;
-width: 200%;
-height: 200%;
-left: 0;
-top: 0;
-}
-</style>
-<script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js"></script>        <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <!-- Responsive datatable examples -->
-        <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        .chartjs-size-monitor-shrink>div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0;
+        }
 
-        <script type="text/javascript" charset="UTF-8" src="./files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js"></script>    </head>
-    <!-- end::Head -->
-    <!-- begin::Body -->
-    <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed" style="">
-        <!-- begin:: Page -->
-        <!-- begin:: Header Mobile -->
-        <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
-            <div class="kt-header-mobile__logo">
-                <a href="http://b2bfixeddepartures.com/">
+    </style>
+    <script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js">
+    </script>
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/buttons.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.css"
+        rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" charset="UTF-8" src="./files/common.js.download"></script>___scripts_6___
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+
+<body
+    class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed"
+    style="">
+    <!-- begin:: Page -->
+    <!-- begin:: Header Mobile -->
+    <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+        <div class="kt-header-mobile__logo">
+            <a href="http://b2bfixeddepartures.com/">
                 <img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="160" height="45">
-                </a>
-            </div>
-            <div class="kt-header-mobile__toolbar">
-                <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
-                <button class="kt-header-mobile__toggler" id="kt_header_mobile_toggler"><span></span></button>
-                <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
-            </div>
+            </a>
         </div>
-        <!-- end:: Header Mobile -->	
-        <div class="kt-grid kt-grid--hor kt-grid--root">
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+        <div class="kt-header-mobile__toolbar">
+            <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left"
+                id="kt_aside_mobile_toggler"><span></span></button>
+            <button class="kt-header-mobile__toggler" id="kt_header_mobile_toggler"><span></span></button>
+            <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i
+                    class="flaticon-more"></i></button>
+        </div>
+    </div>
+    <!-- end:: Header Mobile -->
+    <div class="kt-grid kt-grid--hor kt-grid--root">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+            <!-- begin:: Aside -->
+            <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
+                style="background-color:black;" id="kt_aside">
                 <!-- begin:: Aside -->
-                <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" style="background-color:black;" id="kt_aside">
-                    <!-- begin:: Aside -->
-                    <div class="kt-aside__brand kt-grid__item "  style="background-color:black;" id="kt_aside_brand" kt-hidden-height="85" style="">
-                        
-						<div class="kt-aside__brand-logo" style="background-color:black;">
-                            <a href="http://b2bfixeddepartures.com/">
-                            <br><img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="180" height="48">
-                            </a>
-                        </div>
-                        <div class="kt-aside__brand-tools" style="background-color:black;">
-                            <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                            <path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) "></path>
-                                            <path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999) "></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                            <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z" fill="#000000" fill-rule="nonzero"></path>
-                                            <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999) "></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- end:: Aside -->	<!-- begin:: Aside Menu -->
-                    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" style="background-color:black;" id="kt_aside_menu_wrapper">
-                        <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" style="background-color:black;" data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 611px; overflow: hidden;">
-                            <ul class="kt-menu__nav " style="background-color:black;">
-                                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                                    <a href="{{ route('dashboard') }}" class="kt-menu__link ">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                                    <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero"></path>
-                                                    <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="kt-menu__section ">
-                                    <h4 class="kt-menu__section-text">CRM</h4>
-                                    <i class="kt-menu__section-icon flaticon-more-v2"></i>
-                                </li>
-                                
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.bookings') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Add Bookings </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
+                <div class="kt-aside__brand kt-grid__item " style="background-color:black;" id="kt_aside_brand"
+                    kt-hidden-height="85" style="">
 
-                                
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.manage_bookings') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Manage Bookings </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                    <div class="kt-aside__brand-logo" style="background-color:black;">
+                        <a href="http://b2bfixeddepartures.com/">
+                            <br><img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png"
+                                width="180" height="48">
+                        </a>
+                    </div>
+                    <div class="kt-aside__brand-tools" style="background-color:black;">
+                        <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                        <path
+                                            d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z"
+                                            fill="#000000" fill-rule="nonzero"
+                                            transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) ">
+                                        </path>
+                                        <path
+                                            d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z"
+                                            fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                            transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999) ">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                        <path
+                                            d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                            fill="#000000" fill-rule="nonzero"></path>
+                                        <path
+                                            d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                            fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                            transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999) ">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- end:: Aside -->
+                <!-- begin:: Aside Menu -->
+                <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" style="background-color:black;"
+                    id="kt_aside_menu_wrapper">
+                    <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y"
+                        style="background-color:black;" data-ktmenu-vertical="1" data-ktmenu-scroll="1"
+                        data-ktmenu-dropdown-timeout="500" style="height: 611px; overflow: hidden;">
+                        <ul class="kt-menu__nav " style="background-color:black;">
+                            <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
+                                <a href="{{ route('dashboard') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                <path
+                                                    d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
+                                                    fill="#000000" fill-rule="nonzero"></path>
+                                                <path
+                                                    d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__section ">
+                                <h4 class="kt-menu__section-text">BOOKNGS</h4>
+                                <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                            </li>
+
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.bookings') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Add Bookings </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+
+
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.manage_bookings') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Manage Bookings </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('admin.manage_bookings') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -285,85 +373,161 @@ top: 0;
                                         <span class="kt-menu__link-text">Manage Bookings </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
                                 </li> -->
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.transactions') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Add Transactions </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
+                            <li class="kt-menu__section ">
+                                <h4 class="kt-menu__section-text">TRANSACTIONS</h4>
+                                <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                            </li>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.transactions') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Add Transactions </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
 
-                                
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.manageTransactions') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Manage Transactions </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
-                                <!-- <li class="kt-menu__section ">
+
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.manageTransactions') }}"
+                                    class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Manage Transactions </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+                            <!-- <li class="kt-menu__section ">
                                     <h4 class="kt-menu__section-text">PRODUCTS</h4>
                                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                                 </li> -->
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.fixed_departure') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Add Fixed Departures </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
+                            <li class="kt-menu__section ">
+                                <h4 class="kt-menu__section-text">FIXED DEPARTURE</h4>
+                                <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                            </li>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.fixed_departure') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Add Fixed Departures </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
 
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.managefd') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Manage Fixed Departures </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.managefd') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Manage Fixed Departures </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="kt-menu__section ">
+                                <h4 class="kt-menu__section-text">REQUEST</h4>
+                                <i class="kt-menu__section-icon flaticon-more-v2"></i>
+                            </li>
 
-                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="{{ route('admin.refund_request') }}" class="kt-menu__link kt-menu__toggle">
-                                        <span class="kt-menu__link-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3"></path>
-                                                    <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="kt-menu__link-text">Refund Requests </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                    </a>
-                                </li>
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.refund_request') }}" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Refund Requests </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                                data-ktmenu-submenu-toggle="hover">
+                                <a href="{{ route('admin.group_fare-requests') }}"
+                                    class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <path
+                                                    d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z"
+                                                    fill="#000000" opacity="0.3"></path>
+                                                <path
+                                                    d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z"
+                                                    fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="kt-menu__link-text">Group Fare Requests </span><i
+                                        class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                            </li>
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('international') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -377,7 +541,7 @@ top: 0;
                                         <span class="kt-menu__link-text">International Fixed Departures </span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
                                 </li> -->
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('deals') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -392,7 +556,7 @@ top: 0;
                                     </a>
                                    
                                 </li> -->
-								 <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('group_fare') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -406,14 +570,14 @@ top: 0;
                                         <span class="kt-menu__link-text">Group Fare Request</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
                                 </li> -->
-                                
-                                <!-- <li class="kt-menu__section ">
+
+                            <!-- <li class="kt-menu__section ">
                                     <h4 class="kt-menu__section-text">PAYMENTS</h4>
                                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                                 </li> -->
-                                
-                             
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+
+
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('transactions') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -427,7 +591,7 @@ top: 0;
                                         <span class="kt-menu__link-text">Transactions & Invoice</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
                                 </li> -->
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('refunds') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -442,12 +606,12 @@ top: 0;
                                         <span class="kt-menu__link-text">Refund & Cancellation</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
                                 </li> -->
-                                <!-- <li class="kt-menu__section ">
+                            <!-- <li class="kt-menu__section ">
                                     <h4 class="kt-menu__section-text">SUPPORT</h4>
                                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                                 </li> -->
-                               
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="http://b2bfixeddepartures.com/blogs" class="kt-menu__link">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -464,8 +628,8 @@ top: 0;
                                     </a>
                                     
                                 </li> -->
-                                
-                                <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+
+                            <!-- <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
                                     <a href="{{ route('partner-help') }}" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -481,23 +645,23 @@ top: 0;
                                     </a>
                                   
                                 </li> -->
-                            </ul>
-                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
-                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                            </div>
-                            <div class="ps__rail-y" style="top: 0px; height: 611px; right: 3px;">
-                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div>
-                            </div>
+                        </ul>
+                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps__rail-y" style="top: 0px; height: 611px; right: 3px;">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 300px;"></div>
                         </div>
                     </div>
-                    <!-- end:: Aside Menu -->				
-                </div>                <!-- end:: Aside -->
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-                    <!-- begin:: Header -->
-                    <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="background-color:black;">
-                        <!-- begin:: Header Menu -->
-                        <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper" style="background-color:black;">
-                            <!-- <div id="kt_header_menu" style="background-color:black;" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
+                </div>
+                <!-- end:: Aside Menu -->
+            </div> <!-- end:: Aside -->
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+                <!-- begin:: Header -->
+                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="background-color:black;">
+                    <!-- begin:: Header Menu -->
+                    <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper" style="background-color:black;">
+                        <!-- <div id="kt_header_menu" style="background-color:black;" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
                                 <ul class="kt-menu__nav " style="background-color:black;">
                                     
                                     <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" aria-haspopup="true">
@@ -513,7 +677,7 @@ top: 0;
                                             <span class="kt-menu__link-text">VISA</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                         </a>
                                     </li>
-									<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+         <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
                                         <a href="http://b2bfixeddepartures.com/deals" class="kt-menu__link">
                                             
                                             <span class="kt-menu__link-text">DEALS</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
@@ -521,14 +685,15 @@ top: 0;
                                     </li>
                                 </ul>
                             </div> -->
-                        </div>
-                        <!-- end:: Header Menu -->
-                        <!-- begin:: Header Topbar -->
-                        <div class="kt-header__topbar">
-                            <!--begin: Search -->
-                            <!--begin: Search -->
-                            <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
-                                <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+                    </div>
+                    <!-- end:: Header Menu -->
+                    <!-- begin:: Header Topbar -->
+                    <div class="kt-header__topbar">
+                        <!--begin: Search -->
+                        <!--begin: Search -->
+                        <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown"
+                            id="kt_quick_search_toggle">
+                            <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
                                     <span class="kt-header__topbar-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -539,7 +704,7 @@ top: 0;
                                         </svg>
                                     </span>
                                 </div> -->
-                                <!-- <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
+                            <!-- <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
                                     <div class="kt-quick-search kt-quick-search--dropdown kt-quick-search--result-compact" id="kt_quick_search_dropdown">
                                         <form method="get" class="kt-quick-search__form">
                                             <div class="input-group">
@@ -558,12 +723,12 @@ top: 0;
                                         </div>
                                     </div>
                                 </div> -->
-                            </div>
-                            <!--end: Search -->
-                            <!--end: Search -->
-                            <!--begin: Notifications -->
-                            <div class="kt-header__topbar-item dropdown">
-                                <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
+                        </div>
+                        <!--end: Search -->
+                        <!--end: Search -->
+                        <!--begin: Notifications -->
+                        <div class="kt-header__topbar-item dropdown">
+                            <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
                                     <span class="kt-header__topbar-icon kt-pulse kt-pulse--brand">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -575,24 +740,27 @@ top: 0;
                                         <span class="kt-pulse__ring"></span>
                                     </span>
                                 </div> -->
-                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
-                                    <form>
-                                        <!--begin: Head -->
-                                        <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b" style="background-image: url(./img/black-wallpaper.jpg)">
-                                            <h3 class="kt-head__title">
-                                                Notifications
-                                                &nbsp;
-                                                <span class="btn btn-success btn-sm btn-bold btn-font-md">3 new</span>
-                                            </h3>
-                                            <br>
-                                        </div>
-                                        <!--end: Head -->
-                                    </form>
-                                </div>
+                            <div
+                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+                                <form>
+                                    <!--begin: Head -->
+                                    <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b"
+                                        style="background-image: url(./img/black-wallpaper.jpg)">
+                                        <h3 class="kt-head__title">
+                                            Notifications
+                                            &nbsp;
+                                            <span class="btn btn-success btn-sm btn-bold btn-font-md">3 new</span>
+                                        </h3>
+                                        <br>
+                                    </div>
+                                    <!--end: Head -->
+                                </form>
                             </div>
-                            <!--end: Notifications --><!--begin: Quick Actions -->
-                            <div class="kt-header__topbar-item dropdown">
-                                <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
+                        </div>
+                        <!--end: Notifications -->
+                        <!--begin: Quick Actions -->
+                        <div class="kt-header__topbar-item dropdown">
+                            <!-- <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
                                     <span class="kt-header__topbar-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -605,14 +773,15 @@ top: 0;
                                         </svg>
                                     </span>
                                 </div> -->
-                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
-                                   
-                                </div>
+                            <div
+                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
                             </div>
-                            <!--end: Quick Actions -->
-                      
-					  <!--begin: Quick panel toggler -->
-                            <!-- <div class="kt-header__topbar-item kt-header__topbar-item--quick-panel" data-toggle="kt-tooltip" title="" data-placement="right" data-original-title="Quick panel">
+                        </div>
+                        <!--end: Quick Actions -->
+
+                        <!--begin: Quick panel toggler -->
+                        <!-- <div class="kt-header__topbar-item kt-header__topbar-item--quick-panel" data-toggle="kt-tooltip" title="" data-placement="right" data-original-title="Quick panel">
                                 <span class="kt-header__topbar-icon" id="kt_quick_panel_toggler_btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -623,8 +792,9 @@ top: 0;
                                     </svg>
                                 </span>
                             </div> -->
-                            <!--end: Quick panel toggler --><!--begin: Language bar -->
-                            <!-- <div class="kt-header__topbar-item kt-header__topbar-item--langs">
+                        <!--end: Quick panel toggler -->
+                        <!--begin: Language bar -->
+                        <!-- <div class="kt-header__topbar-item kt-header__topbar-item--langs">
                                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
                                     <span class="kt-header__topbar-icon">
                                     <img class="#" src="http://b2bfixeddepartures.com/" alt="">
@@ -653,33 +823,38 @@ top: 0;
                                     </ul>
                                 </div>
                             </div> -->
-                            <!--end: Language bar --><!--begin: User Bar -->
-                            <div class="kt-header__topbar-item kt-header__topbar-item--user">
-                                <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
-                                    <div class="kt-header__topbar-user">
-                                        <span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
-                                        <span class="kt-header__topbar-username kt-hidden-mobile">Admin</span>
-                                        {{-- <span class="kt-header__topbar-username kt-hidden-mobile"><small>Logout</small></span> --}}
+                        <!--end: Language bar -->
+                        <!--begin: User Bar -->
+                        <div class="kt-header__topbar-item kt-header__topbar-item--user">
+                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                                <div class="kt-header__topbar-user">
+                                    <span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
+                                    <span class="kt-header__topbar-username kt-hidden-mobile">Admin</span>
+                                    {{-- <span class="kt-header__topbar-username kt-hidden-mobile"><small>Logout</small></span> --}}
+                                    <img class="kt-hidden" alt="Pic" src="./files/300_25.jpg">
+                                    <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+                                    <span
+                                        class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">FD</span>
+                                </div>
+                            </div>
+                            <div
+                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+                                <!--begin: Head -->
+                                <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
+                                    style="background-image: url(./img/black-wallpaper.jpg)">
+                                    <div class="kt-user-card__avatar">
                                         <img class="kt-hidden" alt="Pic" src="./files/300_25.jpg">
                                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                                        <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">FD</span>
+                                        <span
+                                            class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">FD</span>
+                                    </div>
+                                    <div class="kt-user-card__name">
+                                        <a href="{{ route('logout') }}">Logout</a>
                                     </div>
                                 </div>
-                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
-                                    <!--begin: Head -->
-                                    <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./img/black-wallpaper.jpg)">
-                                        <div class="kt-user-card__avatar">
-                                            <img class="kt-hidden" alt="Pic" src="./files/300_25.jpg">
-                                            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                                            <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">FD</span>
-                                        </div>
-                                        <div class="kt-user-card__name">
-                                            <a href="{{ route('logout') }}">Logout</a>
-                                        </div>
-                                    </div>
-                                    <!--end: Head -->
-                                    <!--begin: Navigation -->
-                                    <!-- <div class="kt-notification">
+                                <!--end: Head -->
+                                <!--begin: Navigation -->
+                                <!-- <div class="kt-notification">
                                         <a href="http://b2bfixeddepartures.com/partner-profile" class="kt-notification__item">
                                             <div class="kt-notification__item-icon">
                                                 <i class="fa fa-user"></i>
@@ -699,16 +874,16 @@ top: 0;
                                             <a href="#" target="_blank" class="btn btn-clean btn-sm btn-bold">Premium Partner</a>
                                         </div>
                                     </div> -->
-                                    <!--end: Navigation -->
-                                </div>
+                                <!--end: Navigation -->
                             </div>
-                            <!--end: User Bar -->	
                         </div>
-                        <!-- end:: Header Topbar -->
-                    </div>                    <!-- end:: Header -->
-                    <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-                        <!-- begin:: Content Head -->
-                        <!-- <div class="kt-subheader  kt-grid__item" id="kt_subheader">
+                        <!--end: User Bar -->
+                    </div>
+                    <!-- end:: Header Topbar -->
+                </div> <!-- end:: Header -->
+                <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+                    <!-- begin:: Content Head -->
+                    <!-- <div class="kt-subheader  kt-grid__item" id="kt_subheader">
                             <div class="kt-container  kt-container--fluid ">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Partner ID</h3>
@@ -734,119 +909,174 @@ top: 0;
                                 </div>
                             </div>
                         </div> -->
-                        <!-- end:: Content Head -->	
-                        @yield('content')
+                    <!-- end:: Content Head -->
+                    @yield('content')
 
-<!-- begin::Global Config(global config for global JS sciprts) -->
-<script>
-		var KTAppOptions = { "colors": { "state": { "brand": "#716aca", "light": "#ffffff", "dark": "#282a3c", "primary": "#5867dd", "success": "#34bfa3", "info": "#36a3f7", "warning": "#ffb822", "danger": "#fd3995" }, "base": { "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"], "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"] } } };
-	</script>
-	<!-- end::Global Config -->
+                    <!-- begin::Global Config(global config for global JS sciprts) -->
+                    <script>
+                        var KTAppOptions = {
+                            "colors": {
+                                "state": {
+                                    "brand": "#716aca",
+                                    "light": "#ffffff",
+                                    "dark": "#282a3c",
+                                    "primary": "#5867dd",
+                                    "success": "#34bfa3",
+                                    "info": "#36a3f7",
+                                    "warning": "#ffb822",
+                                    "danger": "#fd3995"
+                                },
+                                "base": {
+                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                }
+                            }
+                        };
+                    </script>
+                    <!-- end::Global Config -->
 
-	<!--begin::Global Theme Bundle(used by all pages) -->
-	<script src="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.js.download" type="text/javascript"></script>
-	<script src="http://partner.thetravelsquare.in/resource/admin/files/scripts.bundle.js.download" type="text/javascript"></script>
-	<!--end::Global Theme Bundle -->
+                    <!--begin::Global Theme Bundle(used by all pages) -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.js.download" type="text/javascript">
+                    </script>
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/scripts.bundle.js.download" type="text/javascript">
+                    </script>
+                    <!--end::Global Theme Bundle -->
 
-
-	<!--begin::Page Scripts(used by this page) -->
-	<script src="http://partner.thetravelsquare.in/resource/admin/files/login-1.js.download" type="text/javascript"></script>
-	<!--end::Page Scripts -->
-
-                        <!--begin::Page Vendors(used by this page) -->
-                        <script src="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.js.download" type="text/javascript"></script>
-                            <script src="http://partner.thetravelsquare.in/resource/admin/files/js(1)" type="text/javascript"></script>
-                            <script src="http://partner.thetravelsquare.in/resource/admin/files/gmaps.js.download" type="text/javascript"></script>
-                        <!--end::Page Vendors -->
 
                     <!--begin::Page Scripts(used by this page) -->
-                            <script src="http://partner.thetravelsquare.in/resource/admin/files/dashboard.js.download" type="text/javascript"></script>
-                        <!--end::Page Scripts -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/login-1.js.download" type="text/javascript">
+                    </script>
+                    <!--end::Page Scripts -->
 
-	<!-- end::Body -->
-    <script src="http://partner.thetravelsquare.in/resource/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
-    
-    <script src="http://partner.thetravelsquare.in/resource/admin//plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-        <!--end::Page Vendors -->
-        <!--begin::Page Scripts(used by this page) -->
-        <script src="http://partner.thetravelsquare.in/resource/admin/js/pages/crud/datatables/advanced/multiple-controls.js" type="text/javascript"></script>
-    <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame"
-		src="http://partner.thetravelsquare.in/resource/admin/files/box-469cf41adb11dc78be68c1ae7f9457a4.html"
-        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+                    <!--begin::Page Vendors(used by this page) -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.js.download"
+                                        type="text/javascript"></script>
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/js(1)" type="text/javascript"></script>
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/gmaps.js.download" type="text/javascript"></script>
+                    <!--end::Page Vendors -->
+
+                    <!--begin::Page Scripts(used by this page) -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/files/dashboard.js.download" type="text/javascript">
+                    </script>
+                    <!--end::Page Scripts -->
+
+                    <!-- end::Body -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js"
+                                        type="text/javascript"></script>
+
+                    <script src="http://partner.thetravelsquare.in/resource/admin//plugins/custom/datatables/datatables.bundle.js"
+                                        type="text/javascript"></script>
+                    <!--end::Page Vendors -->
+                    <!--begin::Page Scripts(used by this page) -->
+                    <script src="http://partner.thetravelsquare.in/resource/admin/js/pages/crud/datatables/advanced/multiple-controls.js"
+                                        type="text/javascript"></script>
+                    <iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame"
+                        src="http://partner.thetravelsquare.in/resource/admin/files/box-469cf41adb11dc78be68c1ae7f9457a4.html"
+                        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
 
 
 
-         <!-- begin::Global Config(global config for global JS sciprts) -->
-         <script>
-            var KTAppOptions = {
-    "colors": {
-        "state": {
-            "brand": "#5d78ff",
-            "dark": "#282a3c",
-            "light": "#ffffff",
-            "primary": "#5867dd",
-            "success": "#34bfa3",
-            "info": "#36a3f7",
-            "warning": "#ffb822",
-            "danger": "#fd3995"
-        },
-        "base": {
-            "label": [
-                "#c5cbe3",
-                "#a1a8c3",
-                "#3d4465",
-                "#3e4466"
-            ],
-            "shape": [
-                "#f0f3ff",
-                "#d9dffa",
-                "#afb4d4",
-                "#646c9a"
-            ]
-        }
-    }
-};
-        </script>
+                    <!-- begin::Global Config(global config for global JS sciprts) -->
+                    <script>
+                        var KTAppOptions = {
+                            "colors": {
+                                "state": {
+                                    "brand": "#5d78ff",
+                                    "dark": "#282a3c",
+                                    "light": "#ffffff",
+                                    "primary": "#5867dd",
+                                    "success": "#34bfa3",
+                                    "info": "#36a3f7",
+                                    "warning": "#ffb822",
+                                    "danger": "#fd3995"
+                                },
+                                "base": {
+                                    "label": [
+                                        "#c5cbe3",
+                                        "#a1a8c3",
+                                        "#3d4465",
+                                        "#3e4466"
+                                    ],
+                                    "shape": [
+                                        "#f0f3ff",
+                                        "#d9dffa",
+                                        "#afb4d4",
+                                        "#646c9a"
+                                    ]
+                                }
+                            }
+                        };
+                    </script>
 
-        <script>
-                    $( document ).ready(function() {
-                        $("#flight_type").hide();
-                        $("#package_type").hide();
-                        $("#inclusions").hide();
-                        $("#hotel_detail").hide();
-                    });
-                    $('#deal_type_id').change(function() {
-                        var gid = $(this).val(); 
-                            if (gid == '1') { 
+                    <script>
+                        $(document).ready(function() {
+                            $("#flight_type").hide();
+                            $("#package_type").hide();
+                            $("#inclusions").hide();
+                            $("#hotel_detail").hide();
+                        });
+                        $('#deal_type_id').change(function() {
+                            var gid = $(this).val();
+                            if (gid == '1') {
                                 $("#flight_type").hide();
                                 $("#package_type").show();
                                 $("#inclusions").show();
                                 $("#hotel_detail").hide();
-                            }else if(gid == '2'){
+                            } else if (gid == '2') {
                                 $("#flight_type").show();
                                 $("#package_type").hide();
                                 $("#inclusions").hide();
                                 $("#hotel_detail").hide();
-                            }else if(gid == '3'){
+                            } else if (gid == '3') {
                                 $("#flight_type").hide();
                                 $("#package_type").hide();
                                 $("#inclusions").hide();
                                 $("#hotel_detail").show();
-                            }else{
+                            } else {
                                 $("#flight_type").hide();
                                 $("#package_type").hide();
                                 $("#inclusions").hide();
                                 $("#hotel_detail").hide();
                             }
                             return false;
-                    });
-        </script>
-    <!-- end::Body -->
+                        });
+                    </script>
+                    <!-- end::Body -->
 
-<div class="daterangepicker ltr show-ranges opensleft"><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="This Month">This Month</li><li data-range-key="Last Month">Last Month</li><li data-range-key="Custom Range">Custom Range</li></ul></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>        <script src="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.js"></script>
+                    <div class="daterangepicker ltr show-ranges opensleft">
+                        <div class="ranges">
+                            <ul>
+                                <li data-range-key="Today">Today</li>
+                                <li data-range-key="Yesterday">Yesterday</li>
+                                <li data-range-key="Last 7 Days">Last 7 Days</li>
+                                <li data-range-key="Last 30 Days">Last 30 Days</li>
+                                <li data-range-key="This Month">This Month</li>
+                                <li data-range-key="Last Month">Last Month</li>
+                                <li data-range-key="Custom Range">Custom Range</li>
+                            </ul>
+                        </div>
+                        <div class="drp-calendar left">
+                            <div class="calendar-table"></div>
+                            <div class="calendar-time" style="display: none;"></div>
+                        </div>
+                        <div class="drp-calendar right">
+                            <div class="calendar-table"></div>
+                            <div class="calendar-time" style="display: none;"></div>
+                        </div>
+                        <div class="drp-buttons"><span class="drp-selected"></span><button
+                                class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button
+                                class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                                type="button">Apply</button> </div>
+                    </div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame"
+                        src="./files/box-469cf41adb11dc78be68c1ae7f9457a4.html"
+                        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+                    <script src="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.responsive.min.js">
+                    </script>
+                    <script src="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.js">
+                    </script>
 
-        <!-- Datatable init js -->
-        <script src="http://partner.thetravelsquare.in/resource/agroxa/assets/pages/datatables.init.js"></script>
-	</body>
+                    <!-- Datatable init js -->
+                    <script src="http://partner.thetravelsquare.in/resource/agroxa/assets/pages/datatables.init.js"></script>
+</body>
+
 </html>

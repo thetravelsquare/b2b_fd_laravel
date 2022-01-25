@@ -8,7 +8,7 @@
                         
                         <!-- end:: Content Head -->
                         <!-- begin:: Content -->
-                        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                        {{-- <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                             <!--Begin::Dashboard 1-->
                             <!--Begin::Row-->
                             <div class="row">
@@ -56,7 +56,7 @@
                             
                             <!--End::Row-->
                             <!--End::Dashboard 1-->	
-                        </div>
+                        </div> --}}
                         <!-- end:: Content -->				
                     </div>
 							<!-- remote datatable modal -->
@@ -229,7 +229,7 @@
                                 <a href="http://b2bfixeddepartures.com/about" target="_blank" class="kt-footer__menu-link kt-link">About</a>
                                 <a href="http://b2bfixeddepartures.com/terms-and-conditions/" target="_blank" class="kt-footer__menu-link kt-link">T&C</a>
                                 <a href="http://b2bfixeddepartures.com/privacy-policy" target="_blank" class="kt-footer__menu-link kt-link">Privacy Policy</a>
-                                <a href="http://b2bfixeddepartures.com/partner-care" target="_blank" class="kt-footer__menu-link kt-link">Partner Care</a>
+                                <a href="/partner-help" class="kt-footer__menu-link kt-link">Partner Help</a>
                             </div>
                         </div>
                     </div> 					<!-- end:: Footer -->			
@@ -446,6 +446,11 @@
 
         <!-- Datatable init js -->
         <script src="http://partner.thetravelsquare.in/resource/agroxa/assets/pages/datatables.init.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#sub_datatable_ajax_source input[type="search"]').css({"position":"relative","width":"480px"});
+            });
+        </script>
 	</body>
 </html>
 @endsection

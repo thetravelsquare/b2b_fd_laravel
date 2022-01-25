@@ -1,4 +1,6 @@
-
+@if(Auth::check())
+	<script>window.location.href="/dashboard"</script>
+@endif
 <!DOCTYPE html>
 
 
@@ -229,11 +231,11 @@ top: 0;
                             @csrf
 							<!-- <form class="kt-form" action="http://partner.thetravelsquare.in/partner/login" novalidate="novalidate" id="kt_login_form"> -->
 								<div class="form-group">
-									<input class="form-control" type="text" placeholder="Email Address" name="email"
+									<input class="form-control" type="text" placeholder="Email Address" value="{{ old('email') }}" name="email"
 										autocomplete="off">
 								</div>
 								<div class="form-group">
-									<input class="form-control" type="password" placeholder="Password" name="password"
+									<input class="form-control" type="password" value="{{ old('password') }}" placeholder="Password" name="password"
 										autocomplete="off">
 								</div>
 								<!--begin::Action-->

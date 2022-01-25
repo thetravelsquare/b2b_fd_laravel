@@ -231,7 +231,7 @@ top: 0;
                                     </a>
                                 </li>
                                 <li class="kt-menu__section ">
-                                    <h4 class="kt-menu__section-text">CRM</h4>
+                                    <h4 class="kt-menu__section-text">BOOKINGS</h4>
                                     <i class="kt-menu__section-icon flaticon-more-v2"></i>
                                 </li>
                                 
@@ -352,7 +352,7 @@ top: 0;
                                 </li>
                                
                                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                    <a href="http://b2bfixeddepartures.com/blogs" class="kt-menu__link">
+                                    <a href="#" class="kt-menu__link">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -715,7 +715,7 @@ top: 0;
                                     <!--end: Head -->
                                     <!--begin: Navigation -->
                                     <div class="kt-notification">
-                                        <a href="http://b2bfixeddepartures.com/partner-profile" class="kt-notification__item">
+                                        <a href="/partner-profile" class="kt-notification__item">
                                             <div class="kt-notification__item-icon">
                                                 <i class="fa fa-user"></i>
                                             </div>
@@ -730,7 +730,7 @@ top: 0;
                                         </a>
                                         
                                         <div class="kt-notification__custom kt-space-between">
-                                            <a href="{{ route('logout') }}" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">LOG OUT</a>
+                                            <a href="{{ route('logout') }}" class="btn btn-label btn-label-brand btn-sm btn-bold">LOG OUT</a>
                                             <a href="#" target="_blank" class="btn btn-clean btn-sm btn-bold">Premium Partner</a>
                                         </div>
                                     </div>
@@ -748,7 +748,7 @@ top: 0;
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Partner ID</h3>
                                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <span class="kt-subheader__desc">BAG003PN</span>
+                                    <span class="kt-subheader__desc">{{ Auth::user()->partner_id }}</span>
                                     
                                     <div class="kt-input-icon kt-input-icon--right kt-subheader__search kt-hidden">
                                         <input type="text" class="form-control" placeholder="Search order..." id="generalSearch">
