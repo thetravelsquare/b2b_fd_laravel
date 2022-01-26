@@ -81,7 +81,7 @@
                                                 <div class="modal-body">
                                                     <div class="container">
                                                         <div class="row">
-                                                            <?php $partner = App\Models\User::where('partner_id', $group_fare->partner_id)->first(); ?>
+                                                            <?php $partner = App\Models\User::where('partner_id', $group_fare->partner_id)->first(); dd($partner) ?>
                                                             <div class="col-md-6">
                                                                 <label for="partner_name">Company Name</label>
                                                             </div>
@@ -179,13 +179,6 @@
                                                         </form>
                                                     </div>
                                                 </div>
-
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger"
-                                                        data-dismiss="modal">Close</button>
-                                                </div>
-
                                             </div>
                                         </div>
                                     </div>

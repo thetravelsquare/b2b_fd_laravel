@@ -42,7 +42,6 @@ require __DIR__.'/auth.php';
 
 // ----------------------------------------------------------- ADMIN --------------------------------------------------------------
 
-Route::get('/autocrat/login', [AdminController::class, 'index'])->name('admin.login');
 Route::get('/autocrat', [AdminController::class, 'index'])->name('admin');
 Route::get('/autocrat/add-bookings', [AdminController::class, 'bookings'])->name('admin.bookings')->middleware('auth');
 Route::get('/autocrat/manage-bookings', [AdminController::class, 'allBookings'])->name('admin.manage_bookings')->middleware('auth');
@@ -53,6 +52,7 @@ Route::get('/autocrat/manage-transactions', [AdminController::class, 'manageTran
 Route::get('/autocrat/fixed-departure', [AdminController::class, 'fixed_departure'])->name('admin.fixed_departure')->middleware('auth');
 Route::get('/autocrat/manage-fd', [AdminController::class, 'manageFd'])->name('admin.managefd')->middleware('auth');
 Route::post('/autocrat/add-fd', [AdminController::class, 'addFixedDeparture'])->name('admin.add_fixed_departure')->middleware('auth');
+Route::post('/autocrat/edit-fd/{id}', [AdminController::class, 'editFixedDeparture'])->name('admin.edit_fixed_departure')->middleware('auth');
 Route::get('/autocrat/refund-requests', [AdminController::class, 'refundRequest'])->name('admin.refund_request')->middleware('auth');
 Route::get('/autocrat/group-fare-requests', [GroupFareController::class, 'adminGroupFareRequest'])->name('admin.group_fare-requests')->middleware(['auth']);
 Route::post('/autocrat/add-group-fare/{id}', [GroupFareController::class, 'addGroupFareRequest'])->name('admin.add-group-fare')->middleware(['auth']);

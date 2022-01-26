@@ -14,6 +14,17 @@
                                                 </h3>
                                             </div>
                                         </div>
+                                        @if (Session::get('success'))
+                                            <script>
+                                                setTimeout(function() {
+                                                    $('.alert').fadeOut(1000);
+                                                    // $('.feedback').hide(1000); // you can also try this
+                                                }, 10000);
+                                            </script>
+                                            <div class="alert alert-success">
+                                                {{ session::get('success') }}
+                                            </div>
+                                        @endif
                                         <!--begin::Form-->
                                         <form action="{{ route('admin.add_fixed_departure') }}" class="kt-form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                                         @csrf
@@ -22,80 +33,93 @@
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Airline</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="airline" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="airline" value="{{ old('airline') }}" id='example-number-input'>
+                                                        @error('airline') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Flight Number</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text"  name="flight_no" id="example-number-input" />
+                                                        <input class="form-control" type="text"  name="flight_no" value="{{ old('flight_no') }}" id="example-number-input">
+                                                        @error('flight_no') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Departure(From)</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="departure_from" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="departure_from" value="{{ old('departure_from') }}" id="example-number-input">
+                                                        @error('departure_from') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Arrival(To)</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="arrival_to" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="arrival_to" value="{{ old('arrival_to') }}" id="example-number-input">
+                                                        @error('arrival_to') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Departure Time </label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="departure_time" id="example-number-input" />
+                                                        <input class="form-control" type="time" name="departure_time" value="{{ old('departure_time') }}" id="example-number-input">
+                                                        @error('departure_time') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Arrival Time</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="arrival_time" id="example-number-input" />
+                                                        <input class="form-control" type="time" name="arrival_time" value="{{ old('arrival_time') }}" id="example-number-input">
+                                                        @error('arrival_time') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Departure Date</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="departure_date" id="example-number-input" />
+                                                        <input class="form-control" type="date" name="departure_date" value="{{ old('departure_date') }}" id="example-number-input">
+                                                        @error('departure_date') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Arrival Date</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="arrival_date" id="example-number-input" />
+                                                        <input class="form-control" type="date" name="arrival_date" value="{{ old('arrival_date') }}" id="example-number-input">
+                                                        @error('arrival_date') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Journey Type</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="journey_type" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="journey_type" value="{{ old('journey_type') }}" id="example-number-input">
+                                                        @error('journey_type') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Flight Type</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="flight_type" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="flight_type" value="{{ old('flight_type') }}" id="example-number-input">
+                                                        @error('flight_type') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Baggage Policy</label>
                                                     <div class="col-6">
                                                         <!-- <input class="form-control" type="text" name="baggage_policy" id="example-number-input" /> -->
-                                                        <textarea name="baggage_policy" id="" cols="30" rows="5"></textarea>
+                                                        <textarea name="baggage_policy" id="" cols="30" rows="5">{{ old('baggage_policy') }}</textarea>
+                                                        @error('baggage_policy') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">FD ID</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="fd_id" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="fd_id" value="{{ old('fd_id') }}" id="example-number-input">
+                                                        @error('fd_id') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Sector</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="sector" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="sector" value="{{ old('sector') }}" id="example-number-input">
+                                                        @error('sector') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -109,43 +133,50 @@
 															<option value="International">International</option>
 															<option value="Domestic">Domestic</option>
 														</select>
+                                                        @error('international_or_domestic') <div class="text-danger small">{{ $message }}</div> @enderror
 													</div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Adult Fare</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="adult_fare" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="adult_fare" value="{{ old('adult_fare') }}" id="example-number-input">
+                                                        @error('adult_fare') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Child Fare</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="child_fare" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="child_fare" value="{{ old('child_fare') }}" id="example-number-input">
+                                                        @error('child_fare') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Service Fee</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="service_fee" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="service_fee" value="{{ old('service_fee') }}" id="example-number-input">
+                                                        @error('service_fee') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Fare Type</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="fare_type" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="fare_type" value="{{ old('fare_type') }}" id="example-number-input">
+                                                        @error('fare_type') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Rescheduling Fee</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="rescheduling_fee" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="rescheduling_fee" value="{{ old('rescheduling_fee') }}" id="example-number-input">
+                                                        @error('rescheduling_fee') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Cancellation Fee</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="cancellation_fee" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="cancellation_fee" value="{{ old('cancellation_fee') }}" id="example-number-input">
+                                                        @error('cancellation_fee') <div class="text-danger small">{{ $message }}</div> @enderror
                                                     </div>
                                                 </div>
                                             </div>

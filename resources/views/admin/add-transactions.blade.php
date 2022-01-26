@@ -52,7 +52,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Amount</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="amount" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="amount" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="example-number-input" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

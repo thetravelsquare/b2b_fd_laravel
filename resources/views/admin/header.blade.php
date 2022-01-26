@@ -1,6 +1,6 @@
 <?php 
     if(Auth::user()->user_type != 'admin'){
-        ?>
+?>
 <script>
     window.location.href = "/dashboard"
 </script>
@@ -15,60 +15,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-    <title>Partner Dashboard | B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators |
-        b2bfixeddepartures.com</title>
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-    <meta name="description"
-        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-    <meta name="distribution" content="global">
-    <meta name="country" content="india">
-    <meta name="copyright"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-    <meta name="revisit-after" content="1 Second">
-    <meta name="designer"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-    <meta name="language" content="english">
-    <meta name="robots" content="index, follow">
-    <meta name="rating" content="general">
-    <meta name="publisher"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-
-    <meta property="og:title"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-    <meta property="og:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
-    <meta property="og:url" content="http://b2bfixeddepartures.com/">
-    <meta property="og:description"
-        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-
-    <meta name="twitter:title"
-        content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
-    <meta name="twitter:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
-    <meta name="twitter:description" content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-   that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-   the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-    <meta name="twitter:card"
-        content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
-        that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
-        the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
-
-    <meta name="keywords" content="B2B Fixed Departure, Cheap Fixed Departure, Fixed Departure, FD, Book FD, Maldives FD, Goa Fixed Departure, Pre-Purchased Flight, Consolidated Rates,
- Airline Consilidator, B2B Group Fare, Group Fare, Dubai Fixed Departure">
-    <meta name="format-detection" content="8595902759">
-
-    <meta property="fb:app_id" content="520084915232338" />
-    <meta name="twitter:site" content="@fixeddepartureflights.com">
-
-
-
+    <title>Partner Dashboard | B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE16CRYW41"></script>
@@ -87,41 +35,16 @@
     <!--begin::Fonts -->
     <link rel="stylesheet" href="http://partner.thetravelsquare.in/resource/admin/files/css">
     <!--end::Fonts -->
-
-    <!--begin::Page Custom Styles(used by this page) -->
     <link href="http://partner.thetravelsquare.in/resource/admin/files/login-1.css" rel="stylesheet" type="text/css">
-    <!--end::Page Custom Styles -->
     <link href="" rel="stylesheet" type="text/css">
-
-    <!--begin::Global Theme Styles(used by all pages) -->
-    <link href="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.css" rel="stylesheet"
-        type="text/css">
-    <link href="http://partner.thetravelsquare.in/resource/admin/files/style.bundle.css" rel="stylesheet"
-        type="text/css">
-    <!--end::Global Theme Styles -->
-
-    <!--begin::Page Vendors Styles(used by this page) -->
-    <link href="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.css" rel="stylesheet"
-        type="text/css">
-    <!--end::Page Vendors Styles -->
-
-    <!--begin::Layout Skins(used by all pages) -->
-    <!--end::Layout Skins -->
-
-    <!--begin::Layout Skins(used by all pages) -->
-
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/plugins.bundle.css" rel="stylesheet" type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/style.bundle.css" rel="stylesheet" type="text/css">
+    <link href="http://partner.thetravelsquare.in/resource/admin/files/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
     <link href="http://partner.thetravelsquare.in/resource/admin/files/dark.css" rel="stylesheet" type="text/css">
     <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(1).css" rel="stylesheet" type="text/css">
     <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(2).css" rel="stylesheet" type="text/css">
     <link href="http://partner.thetravelsquare.in/resource/admin/files/dark(3).css" rel="stylesheet" type="text/css">
     <!--end::Layout Skins -->
-
-    <link rel="shortcut icon"
-        href="https://keenthemes.com/metronic/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico">
-
-
-    <link rel="shortcut icon" href="">
-
     <!-- Hotjar Tracking Code for keenthemes.com -->
     <script async="" src="http://partner.thetravelsquare.in/resource/admin/files/modules.3a2c212c6000288ee2ae.js.download"
         charset="utf-8"></script>
@@ -191,17 +114,13 @@
         }
 
     </style>
-    <script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js">
-    </script>
-    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
-    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/buttons.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js"></script>
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <!-- Responsive datatable examples -->
-    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.css"
-        rel="stylesheet" type="text/css" />
+    <link href="http://partner.thetravelsquare.in/resource/agroxa/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-    <script type="text/javascript" charset="UTF-8" src="./files/common.js.download"></script>___scripts_6___
+    <script type="text/javascript" charset="UTF-8" src="./files/common.js.download"></script>
 </head>
 <!-- end::Head -->
 <!-- begin::Body -->

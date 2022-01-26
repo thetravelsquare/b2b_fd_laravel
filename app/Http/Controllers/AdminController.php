@@ -125,6 +125,7 @@ class AdminController extends Controller
         $fds = FixedDeparture::orderBy('id', 'desc')->get();
         return view('admin.manage-fd', compact('fds'));
     }
+    
     public function addFixedDeparture(Request $request){
         $validate = $request->validate([
             'airline' => 'required',
@@ -142,7 +143,6 @@ class AdminController extends Controller
             'sector' => 'required',
             'international_or_domestic' => 'required',
             'adult_fare' => 'required',
-            'child_fare' => 'required',
             'service_fee' => 'required',
             'fare_type' => 'required',
             'rescheduling_fee' => 'required',
@@ -171,10 +171,59 @@ class AdminController extends Controller
         $fd->rescheduling_fee = $request->rescheduling_fee;
         $fd->cancellation_fee = $request->cancellation_fee;
         if($fd->save()){
-            return back();
+            return back()->with('success', 'Fixed Departure Added');
         }
     }
     
+    public function editFixedDeparture(Request $request, $id){
+        $validate = $request->validate([
+            'airline' => 'required',
+            'flight_no' => 'required',
+            'departure_from' => 'required',
+            'arrival_to' => 'required',
+            'departure_time' => 'required',
+            'arrival_time' => 'required',
+            'departure_date' => 'required',
+            'arrival_date' => 'required',
+            'journey_type' => 'required',
+            'flight_type' => 'required',
+            'baggage_policy' => 'required',
+            'fd_id' => 'required',
+            'sector' => 'required',
+            'international_or_domestic' => 'required',
+            'adult_fare' => 'required',
+            'service_fee' => 'required',
+            'fare_type' => 'required',
+            'rescheduling_fee' => 'required',
+            'cancellation_fee' => 'required',
+        ]);
+
+        $fd = FixedDeparture::findOrFail($id);
+        $fd->airline = $request->airline;
+        $fd->flight_no = $request->flight_no;
+        $fd->departure_from = $request->departure_from;
+        $fd->arrival_to = $request->arrival_to;
+        $fd->departure_time = $request->departure_time;
+        $fd->arrival_time = $request->arrival_time;
+        $fd->departure_date = $request->departure_date;
+        $fd->arrival_date = $request->arrival_date;
+        $fd->journey_type = $request->journey_type;
+        $fd->flight_type = $request->flight_type;
+        $fd->baggage_policy = $request->baggage_policy;
+        $fd->fd_id = $request->fd_id;
+        $fd->sector = $request->sector;
+        $fd->international_or_domestic = $request->international_or_domestic;
+        $fd->adult_fare = $request->adult_fare;
+        $fd->child_fare = $request->child_fare;
+        $fd->service_fee = $request->service_fee;
+        $fd->fare_type = $request->fare_type;
+        $fd->rescheduling_fee = $request->rescheduling_fee;
+        $fd->cancellation_fee = $request->cancellation_fee;
+        if($fd->save()){
+            return back()->with('success', 'Fixed Departure Updated');
+        }
+    }
+
     public function refundRequest(){
         $requests = Refund::orderBy('id', 'desc')->get();
         return view('admin.refund-requests', compact('requests'));

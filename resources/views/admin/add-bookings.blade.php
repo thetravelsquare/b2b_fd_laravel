@@ -1,5 +1,4 @@
 @extends('admin.header')
-
 @section('content')
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                             <!--Begin::Dashboard 1-->
@@ -34,7 +33,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Date</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="date" id="example-number-input" />
+                                                        <input class="form-control" type="date" name="date" id="example-number-input" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -70,19 +69,19 @@
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Departure Date</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="departure_date" id="example-number-input" />
+                                                        <input class="form-control" type="date" name="departure_date" id="example-number-input" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Arrival Date</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="arrival_date" id="example-number-input" />
+                                                        <input class="form-control" type="date" name="arrival_date" id="example-number-input" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter Amount</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="amount" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="amount" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="example-number-input" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -112,7 +111,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-number-input" class="col-2 col-form-label">Enter PAX</label>
                                                     <div class="col-6">
-                                                        <input class="form-control" type="text" name="pax" id="example-number-input" />
+                                                        <input class="form-control" type="text" name="pax" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="example-number-input" />
                                                     </div>
                                                 </div>
                                             </div>

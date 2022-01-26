@@ -1,4 +1,12 @@
-
+<?php 
+    if(Auth::user()->user_type != 'partner'){
+?>
+<script>
+    window.location.href = "/dashboard"
+</script>
+<?php
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <!-- begin::Head -->
