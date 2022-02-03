@@ -103,7 +103,7 @@
                                                         <td>{{ $dfd->fare_type }}</td>	
                                                         <td>{{ $dfd->departure_time }}</td>	
                                                         <td>{{ $dfd->arrival_time }}</td>	
-                                                        <td>{{ $dfd->fare }}</td>	
+                                                        <td>{{ $dfd->adult_fare }}</td>	
 														 <td data-field="Status" class="kt-datatable__cell"><span style="width: 146px;"><span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill" style="background-color:black">BOOK NOW</span></span></td>
                                                     </tr>
 													@endforeach
