@@ -19,7 +19,13 @@ use App\Http\Controllers\RefundController;
 |
 */
 
-Route::get('/', function () {return view('auth.login');});
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
 Route::get('partner-help', function(){return view('partner-help');})->name('partner-help')->middleware(['auth']);
 

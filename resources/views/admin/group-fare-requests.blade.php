@@ -81,7 +81,7 @@
                                                 <div class="modal-body">
                                                     <div class="container">
                                                         <div class="row">
-                                                            <?php $partner = App\Models\User::where('partner_id', $group_fare->partner_id)->first(); dd($partner) ?>
+                                                            <?php $partner = App\Models\User::where('partner_id', $group_fare->partner_id)->first(); ?>
                                                             <div class="col-md-6">
                                                                 <label for="partner_name">Company Name</label>
                                                             </div>

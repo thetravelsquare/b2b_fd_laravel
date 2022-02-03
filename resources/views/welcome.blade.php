@@ -1,132 +1,557 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+		
+	
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+        <!-- title -->
+        <title>B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Partner Dashboard | B2B Fixed Departures | World's Largest Fixed Departure Aggregators">
+<meta name="description" content="B2B Fixed Departures (TM) is an Aviation Hospitality Service Company 
+								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.Cheapest Fixed Departure Inventory ">
+<meta name="distribution" content="global">
+<meta name="country" content="india">
+<meta name="copyright" content="B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory">
+<meta name="revisit-after" content="1 Second">
+<meta name="designer" content="B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory">
+<meta name="language" content="english">
+<meta name="robots" content="index, follow">
+<meta name="rating" content="general">
+<meta name="publisher" content="B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory">
+
+<meta property="og:title" content="B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory">
+<meta property="og:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
+<meta property="og:url" content="http://b2bfixeddepartures.com/">
+<meta property="og:description"
+    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+
+<meta name="twitter:title" content="B2B Fixed Departures Flight | World's Largest Fixed Departure Aggregators | b2bfixeddepartures.com | Cheapest Fixed Departure Inventory">
+<meta name="twitter:image" content="http://b2bfixeddepartures.com/b2bfixeddepartures-logo-black.png">
+<meta name="twitter:description"
+    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+			that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+			the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+<meta name="twitter:card"
+    content="B2B Fixed Departures (TM) is an Aviation Hositality Service Company 
+								that Serves B2B Agents & Customers with Pre-Purchased, Group Fare Flight Deals for More than 75+ Sectors Accross
+								the World. We are World's Largest Inventory Holders & Aggregators of the Pre-Purchased, Fixed Departure Flights.">
+
+<meta name="keywords"
+    content="B2B Fixed Departures, Cheap Fixed Departure, Fixed Departure, FD, Book FD, Maldives FD, Goa Fixed Departure, Pre-Purchased Flight, Consolidated Rates,
+	Airline Consilidator, B2B Group Fare, Group Fare, Dubai Fixed Departure">
+<meta name="format-detection" content="8595902759">
+
+<meta property="fb:app_id" content="520084915232338" />
+<meta name="twitter:site" content="@fixeddepartureflights.com">
+
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE16CRYW41"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EE16CRYW41');
+</script>
+		
+        <!-- favicon -->
+		<link rel="icon" type="image/png" href="https://colorlib.com/etc/cs/comingsoon_06/images/icons/favicon.ico">
+        <link rel="shortcut icon" href="http://www.themezaa.com/html/leadgen/demo/software/images/icon/favicon.png">
+        <!-- animation -->
+        <link rel="stylesheet" href="{{ asset('assets/animate.css') }}">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap.min.css') }}">
+        <!-- font-awesome icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <!-- themify-icons -->
+        <link rel="stylesheet" href="{{ asset('assets/themify-icons.css') }}">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="{{ asset('assets/owl.transitions.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/owl.carousel.css') }}"> 
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="{{ asset('assets/magnific-popup.css') }}"> 
+        <!-- base -->
+        <link rel="stylesheet" href="{{ asset('assets/base.css') }}"> 
+        <!-- elements -->
+        <link rel="stylesheet" href="{{ asset('assets/elements.css') }}">
+        <!-- responsive -->
+        <link rel="stylesheet" href="{{ asset('assets/responsive.css') }}">
+        <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+        <![endif]-->
+        <!--[if IE]>
+            <script src="js/html5shiv.min.js"></script>
+        <![endif]-->
         <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
+            .btn-dual .btn { margin: 0 12px 0 0;}
         </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+    <body>
+        <header class="header-style5" id="header-section12">
+            <!-- nav -->
+            <nav class="navbar tz-header-bg black-header alt-font no-margin shrink-transparent-header-dark dark-header header-border-light shrink-nav shrink">
+                <div class="container navigation-menu">
+                    <div class="row">
+                        <!-- logo -->
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <a href="http://propertymanager.b2bfixeddepartures.com/" class="inner-link"><img alt="b2b-fixed-departure-logo" src="http://b2bfixeddepartures.com/img/b2b-fixed-departure-logo-symbol.png"></a>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
+                        <!-- end logo -->
+                        <div class="col-md-9 col-sm-8 col-xs-6 position-inherit xs-no-padding-left">
+                            <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- social elements -->
+                            <div class="social float-right pull-right">
+                                <a href="https://www.facebook.com/b2bfixeddepartures" target="_blank" rel=”nofollow”><i class="fa fa-facebook tz-icon-color"></i></a>
+                                <a href="https://twitter.com/b2bfixeddepartures" target="_blank" rel=”nofollow”><i class="fa fa-twitter tz-icon-color"></i></a>
+								<a href="https://www.instagram.com/b2bfixeddepartures/" target="_blank" rel=”nofollow”><i class="fa fa-instagram tz-icon-color"></i></a>
+                                <a href="https://www.linkedin.com/company/b2bfixeddepartures" target="_blank" rel=”nofollow”><i class="fa fa-linkedin tz-icon-color"></i></a>
+                                
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
+                            <!-- end social elements -->
+                            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse pull-right">
+                                <ul class="nav navbar-nav">
+                                    <li class="propClone"><a class="inner-link" href="tel:8595902755"><i class="fa fa-phone"></i> &nbsp; +91-8595-9027-55 | 56</a></li>
+                                    <li class="propClone"><a class="inner-link" href="/about"><i class="fa fa-university"></i> &nbsp;ABOUT US</a></li>
+                                    <li class="propClone"><a class="inner-link" href="/login"><i class="fa fa-user-circle"></i> &nbsp; PARTNER LOGIN</a></li>
+                                    <li class="propClone"><a class="inner-link" href="/partner-help" target="_blank"><i class="fa fa-headphones"></i> &nbsp; PARTNER SUPPORT</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+            </nav> 
+            <!-- end nav -->
+        </header>
+        <section class="position-relative hero-style19 cover-background tz-builder-bg-image hero-style19 hero-style2 border-none bg-img-one" id="home" data-img-size="(W)1920px X (H)800px" 
+		style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) repeat scroll 0% 0%, transparent url(./img/b2b-fixed-departures.jpg) repeat scroll 0% 0%;">
+            <div class="container one-sixth-screen xs-height-auto position-relative">
+                <div class="row">
+                    <div class="slider-typography xs-position-static text-center">
+                        <div class="slider-text-middle-main">
+                            <div class="slider-text-middle text-center xs-padding-fifteen xs-no-padding-lr">
+                                <div class="col-md-9 col-sm-12 col-xs-12 center-col margin-fifteen-top">
+                                    <!-- title --><br>
+                                    <h1 class="title-extra-large-4 md-title-extra-large-2 xs-title-extra-large-2 letter-spacing-minus-1 text-white alt-font font-weight-600 margin-one-bottom sm-margin-three-bottom tz-text center-col">
+									<b>b2bfixeddepartures.com</b> <br><small>
+									<font color="white" size="3">World's Largest Fixed Departure Aggregators</font></small></h1><br>
+                                    <!-- end title -->
+                                    <div class="btn-dual">
+                                        <a class="btn btn-large propClone bg-white text-black btn-circle xs-margin-ten-bottom xs-width-100" href="/register" target="_blank">
+										<span class="tz-text">BECOME A PARTNER</span><i class="fa fa-user text-extra-medium tz-icon-color"></i></a>
+                                    </div>
+                                </div>
+                                <!-- image -->
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <!-- end image -->
+                            </div>                                
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+        <section class="padding-60px-tb bg-light-gray builder-bg" id="callto-action2">
+            <div class="container">
+                <div class="row equalize">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="height: 45px;">
+                        <div class="display-inline-block sm-display-block vertical-align-middle margin-five-right sm-no-margin-right sm-margin-ten-bottom tz-text
+						alt-font text-dark-gray text-extra-large sm-text-extra-large"><b><font size="4">World's Largest Fixed Departure Aggregators</b></div>
+                        <a class="btn-medium btn text-fast-blue2 border-2-fast-blue2 btn-circle" href="/register"><span class="tz-text">SEE OUR DEPARTURES</span><i class="fa fa-long-arrow-right text-extra-medium tz-icon-color"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="builder-bg padding-110px-tb xs-padding-60px-tb bg-white" id="feature-section27">
+            <div class="container">
+                <div class="row four-column">
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-nine-bottom xs-margin-fifteen-bottom text-center">
+                        <div class="feature-box">     
+                            <div class="margin-fifteen-bottom xs-margin-five-bottom"><font color="black"><i class="fa fa-desktop text-fast icon-large tz-icon-color"></i></font></div>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font font-weight-600 display-block margin-three-bottom xs-margin-five-bottom tz-text">Smart CRM Dashboard</h3>
+                            <div class="feature-text text-medium center-col tz-text"><p class="no-margin-bottom">B2B Fixed Departure Offers a Dedicated Dashboard With Smart CRM To View, Book & Manage Fixed Departure & Pre-Purchased Inventory Deals.</p></div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-nine-bottom xs-margin-fifteen-bottom text-center">
+                        <div class="feature-box">
+                            <div class="margin-fifteen-bottom xs-margin-five-bottom"><font color="black"><i class="fa fa-paper-plane text-fast icon-large tz-icon-color"></i></font></div>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font font-weight-600 display-block margin-three-bottom xs-margin-five-bottom tz-text">250+ Fixed Departures</h3>
+                            <div class="feature-text text-medium center-col tz-text"><p class="no-margin-bottom">Book From More than 250+ Fixed Departure Pre-Purchased Flight Inventory for more than 75+ International & Domestic Sectors .</p></div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center xs-margin-fifteen-bottom">
+                        <div class="feature-box">
+                            <div class="margin-fifteen-bottom xs-margin-five-bottom"><font color="black"><i class="fa fa-server text-fast icon-large tz-icon-color"></i></font></div>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font font-weight-600 display-block margin-three-bottom xs-margin-five-bottom tz-text">Real Time Live Inventory</h3>
+                            <div class="feature-text text-medium center-col tz-text"><p class="no-margin-bottom">Book From Real Time Live Inventory of Pre-Purchased Deals at B2B Airfares, With Net Fare ,Exlcusive of Hidden Charge, Service or Convenience Fee</p></div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                        <div class="feature-box">
+                            <div class="margin-eleven-bottom xs-margin-five-bottom"><font color="black"><i class="fa fa-hotel text-fast icon-large tz-icon-color"></i></font></div>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font font-weight-600 display-block margin-three-bottom xs-margin-five-bottom tz-text">Transaction & Booking Record</h3>
+                            <div class="feature-text text-medium center-col tz-text"><p class="no-margin-bottom">Manage All Fixed Departure Bookings & Transaction Records with Our Portal Haslee Free. With Easy Invoice Management & and E-Ticket Generation</p></div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                </div><br>
+				
+            </div>
+        </section>
+        <section class="padding-110px-tb feature-style29 bg-light-gray builder-bg xs-padding-60px-tb" id="content-section44">
+            <div class="container">
+                <div class="row equalize xs-equalize-auto equalize-display-inherit">
+                    <div class="col-md-6 display-table col-sm-12 col-xs-12 xs-margin-nineteen-bottom sm-height-auto" style="height: 630px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <a href="https://www.youtube.com/watch?v=3QeVjMsyqpo" rel="nofollow" targe="_blank"><img class="img-responsive sm-width-60 xs-width-100 margin-lr-auto sm-margin-twenty-bottom" src="./img/how-do-we-work-the-travel-square-video.jpg" width="1000" height="1000" alt="the-travel-square-hotel-manager-dashboard" title="B2B Fixed Departures Dashboard"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 display-table sm-height-auto" style="height: 630px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <!-- section title -->
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h2 class="title-extra-large alt-font sm-section-title-small letter-spacing-minus-1 xs-section-title-large text-dark-gray margin-four-bottom xs-text-center tz-text">Why Book With Us ?</h2>
+                                <p class="text-extra-large font-weight-300 margin-fifteen-bottom xs-margin-nineteen-bottom xs-text-center tz-text">We are the Largest Aggregators for Pre-Purchased Fixed Departure Inventories of Airlines</p>
+                            </div>
+                            <!-- end section title -->
+                            <!-- feature box -->
+                            <div class="row two-column no-margin">
+                                <div class="col-md-6 col-sm-6 col-xs-12 margin-eight-bottom xs-margin-fifteen-bottom xs-text-center">
+                                    <div class="float-left xs-margin-lr-auto xs-float-none xs-margin-seven-bottom"><font color="black"><i class="fa fa-plane text-fast icon-large tz-icon-color"></i></font></div>
+                                    <div class="info xs-no-margin xs-width-100 xs-clear-both">
+                                        <h3 class="text-large alt-font margin-two-bottom text-dark-gray tz-text font-weight-600">Flight At less Price</h3>
+                                        <div class="text-medium tz-text"><p>Same Online Flight at Lowest Possible Fare Being a Pre-Purchased Inventory.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 margin-eight-bottom xs-margin-fifteen-bottom xs-text-center">
+                                    <div class="float-left xs-margin-lr-auto xs-float-none xs-margin-seven-bottom"><font color="black"><i class="fa fa-globe text-fast icon-large tz-icon-color"></i></font></div>
+                                    <div class="info xs-no-margin xs-width-100 xs-clear-both">
+                                        <h3 class="text-large alt-font margin-two-bottom text-black tz-text font-weight-600">We Hold Inventory</h3>
+                                        <div class="text-medium tz-text"><p>We Hold 10% Seats of Major Sectors accross the Globe During the Peak Travel Time</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 xs-margin-fifteen-bottom xs-text-center">
+                                    <div class="float-left xs-margin-lr-auto xs-float-none xs-margin-seven-bottom"><font color="black"><i class="fa fa-suitcase text-fast icon-large tz-icon-color"></i></font></div>
+                                    <div class="info xs-no-margin xs-width-100 xs-clear-both">
+                                        <h3 class="text-large alt-font margin-two-bottom text-black tz-text font-weight-600">Flexible Payments</h3>
+                                        <div class="text-medium tz-text"><p>Easy & Flexible Payment Schedule for Departures with Additional Ancillaries</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 xs-no-margin-bottom xs-text-center">
+                                    <div class="float-left xs-margin-lr-auto xs-float-none xs-margin-seven-bottom"><font color="black"><i class="fa fa-handshake-o text-fast icon-large tz-icon-color"></i></font></div>
+                                    <div class="info xs-no-margin xs-width-100 xs-clear-both">
+                                        <h3 class="text-large alt-font margin-two-bottom text-black tz-text font-weight-600">Best Deal for FD</h3>
+                                        <div class="text-medium tz-text"><p>Create Fixed Packages with Our Inventories for Trending Locations at Best Prices.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end feature box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padding-110px-tb xs-padding-60px-tb bg-white builder-bg border-none" id="title-section13">
+            <div class="container">
+                <!-- section title -->
+                <div class="row">
+                    <div class="col-md-7 col-sm-12 col-xs-12 title-small sm-title-small text-center center-col">
+                        <span class="text-large text-fast-blue2 alt-font tz-text xs-margin-seven-bottom">BEST FIXED DEPARTURE DEALS ARE HERE !</span>
+                        <h2 class="title-extra-large-2 letter-spacing-minus-1 text-dark-gray alt-font display-block tz-text xs-margin-seven-bottom">Best Pre-Purchased Airfares	</h2>
+                        <div class="text-medium display-block margin-three-top margin-six-bottom tz-text xs-margin-nine-bottom"><p>Our Platform is free to use, it helps you get best Pre-Purchased rates & B2B tariff for more than 75+ sectors accross the globe , Boosting your aviation business sales with assured growth rate.</p></div>
+                        <a href="/register" class="btn-medium btn-circle btn border-2-fast-blue2 btn-border text-fast-blue2"><span class="tz-text">LOGIN NOW</span><i class="fa fa-long-arrow-right text-extra-medium tz-icon-color"></i></a>
+                    </div>
+                </div>
+                <!-- end section title -->
+            </div>
+        </section>
+        <section class="no-padding cover-background tz-builder-bg-image border-none header-style25 bg-img-two" id="hero-section20" 
+		data-img-size="(W)1920px X (H)900px" style="background:linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), 
+		url(./img/black-banner.jpg)">
+            <div class="container one-fourth-screen sm-height-auto position-relative">
+                <div class="slider-typography text-center sm-position-relative">
+                    <div class="slider-text-middle-main">
+                        <div class="slider-text-middle text-left sm-padding-nineteen sm-no-padding-lr xs-text-center">
+                            <!-- slider text -->
+                            <div class="col-md-6 col-sm-12 col-xs-12 sm-text-center xs-no-padding-lr">
+                                <h1 class="title-extra-large-4 md-title-extra-large-3 line-height-65 sm-title-extra-large alt-font letter-spacing-minus-1 xs-title-extra-large text-white margin-eight-bottom sm-margin-four-bottom tz-text">We Hold 236+ Scheduled Fixed Departures at 75+ Aviation Sectors.</h1>
+                                <div class="text-white title-small line-height-34 font-weight-100 width-100 xs-text-extra-large tz-text margin-thirteen-bottom sm-margin-six-bottom xs-margin-eleven-bottom sm-margin-nine-bottom"><p>Know more about B2B Fixed Departures, World's Largest B2B Fixed Departure Aggregators</p></div>
+                                <div class="btn-dual">
+                                    <a class="btn btn-large btn-circle propClone bg-white text-dark-gray xs-margin-lr-auto xs-float-none xs-display-block"
+									href="/register" target="_blank">
+									<span class="tz-text">WATCH VIDEO</span><i class="fa fa-play-circle text-extra-medium tz-icon-color"></i></a>
+                                </div>
+                            </div>
+                            <!-- end slider text -->
+                            <!-- image -->
+                            <div class="col-md-6 col-sm-12 col-xs-12 text-center outside-image sm-position-relative xs-no-padding-lr">
+                                <div class="outside-image-sub height-80 margin-twenty-three-top">
+                                    <img src="./img/the-travel-square-indias-largest-b2b-travel-company.png" data-img-size="(W)1420px X (H)793px" alt="" class="sm-width-100">
+                                </div>
+                            </div>
+                            <!-- end image -->
+                        </div>                                
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials-section10" class="bg-white builder-bg padding-110px-tb testimonial-style10 xs-padding-60px-tb">                
+            <div class="container">
+                <div class="row">                        
+                    <!-- testimonial item -->
+                    <div class="col-md-7 col-sm-9 col-xs-12 xs-text-center center-col">
+                        <div class="col-md-3 col-sm-3 col-xs-12 sm-no-padding xs-margin-eleven-bottom">
+                            <img class="border-radius-100 width-95 xs-width-40" src="./img/b2b-fixed-departure-logo-symbol-dark.png" alt="the-travel-square-vibhu-ceo" title="B2B Fixed Departures CEO , Vibhu Gupta">
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12 feature-box-details">
+                            <div class="text-medium float-left width-100 tz-text"><p>We have come with better technology driven solutions for the aviation industry which will help them retain there customers more often .</p></div>
+                            <span class="tz-text font-weight-600 alt-font text-dark-gray sm-text-medium display-inline-block">B2B FIXED DEPARTURE</span>
+                            <span class="tz-text alt-font text-extra-small display-block">TEAM , INDIA</span>
+                        </div>
+                    </div>
+                    <!-- end testimonial item --> 
+                </div>
+            </div>        
+        </section> 
+        <section class="padding-110px-tb xs-padding-60px-tb bg-light-gray builder-bg" id="content-section32">
+            <div class="container">
+                <div class="row equalize xs-equalize-auto equalize-display-inherit">
+                    <div class="col-lg-5 col-md-6 col-sm-6 xs-12 xs-text-center xs-margin-nineteen-bottom display-table" style="height: 682px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <div class="sm-margin-five-bottom alt-font text-fast-blue2 font-weight-500 text-extra-large tz-text">Onboarding is just 3-step process.</div>
+                            <!-- section title -->
+                            <h2 class="alt-font title-extra-large sm-title-large xs-title-large text-dark-gray margin-eight-bottom tz-text sm-margin-ten-bottom letter-spacing-minus-1">Steps to Partner with us</h2><br>
+                            <!-- end section title -->
+                            <div class="text-medium tz-text width-90 sm-width-100 margin-seven-bottom sm-margin-ten-bottom"><p><b>STEP 1</b> - Register with us, submit your Travel Agency Details for the 5 Minutes Quick Verification & Onboarding Process.</p></div>
+                            <div class="text-medium tz-text width-90 sm-width-100 margin-fifteen-bottom sm-margin-ten-bottom"><p><b>STEP 2</b> - Get a Dedicated Account Manager for Personal Assitance and Share details for the Type of Requirements.</p></div>
+                            <div class="text-medium tz-text width-90 sm-width-100 margin-seven-bottom sm-margin-ten-bottom"><p><b>STEP 3</b> - Now Login into your Account and Get B2B rates for more than 236+ Scheduled flights covering 75+ Airline Sectors.</p></div>
+                            <a class="btn btn-medium propClone btn-circle bg-fast-blue2 text-white" href="/register"><span class="tz-text">ONBOARD NOW</span><i class="fa fa-angle-right text-extra-medium tz-icon-color"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-6 xs-12 xs-text-center display-table" style="height: 682px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <center><img alt="the-travel-square-b2b-business-hotel-manager" src="./img/the-travel-square-b2b-hotel-manager.png" title="B2B Fixed Departures B2B Business Hotel Manager" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section id="clients-section2" class="padding-110px-tb bg-white builder-bg clients-section2 xs-padding-top-60px">
+            <div class="container">
+                <div class="row">
+                    <!-- clients logo -->
+                    <div class="owl owl-carousel owl-theme owl-no-pagination owl-dark-pagination outside-arrow-simple black-pagination sm-no-owl-buttons sm-show-pagination owl-pagination-bottom" style="opacity: 1; display: block;">
+                        <!-- client logo image -->
+                        <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2980px; left: 0px; display: block;"><div class="owl-item" style="width: 298px;"><div class="item">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="client-logo-outer">
+                                    <div class="client-logo-inner">
+                                        <a href="https://www.aircanada.com/ca/en/aco/home.html#/home:mngBook" target="_blank" rel=”nofollow”>
+                                            <img src="./img/air-canada-partner-b2bfixeddepartures-the-travel-square.png" id="tz-bg-149" alt="air-canada-partner-b2bfixeddepartures-the-travel-square.png" title="air-canada-partner-b2bfixeddepartures-the-travel-square">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div></div><div class="owl-item" style="width: 298px;"><div class="item">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="client-logo-outer">
+                                    <div class="client-logo-inner">
+                                        <a href="https://bookme.airindia.in/AirIndiaB2C/Manage/Retrieve" target="_blank" rel=”nofollow”>
+                                            <img src="./img/air-india-partner-b2bfixeddepartures-the-travel-square.png" id="tz-bg-150" alt="air-india-partner-b2bfixeddepartures-the-travel-square" title="air-india-partner-b2bfixeddepartures-the-travel-square">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div></div><div class="owl-item" style="width: 298px;"><div class="item">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="client-logo-outer">
+                                    <div class="client-logo-inner">
+                                        <a href="https://www.goindigo.in/edit-booking.html" target="_blank" rel=”nofollow”>
+                                            <img src="./img/indigo-partner-b2bfixeddepartures-the-travel-square.png" id="tz-bg-151" alt="indigo-partner-b2bfixeddepartures-the-travel-square" title="indigo-partner-b2bfixeddepartures-the-travel-square">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div></div><div class="owl-item" style="width: 298px;"><div class="item">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="client-logo-outer">
+                                    <div class="client-logo-inner">
+                                        <a href="https://book.spicejet.com/retrievebooking.aspx" target="_blank" rel=”nofollow”>
+                                            <img src="./img/spicejet-partner-b2bfixeddepartures-the-travel-square.png"  id="tz-bg-152" alt="spicejet-partner-b2bfixeddepartures-the-travel-square" title="spicejet-partner-b2bfixeddepartures-the-travel-square">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div></div></div></div>
+                        
+                   </div>
+                    <!-- end clients logo -->
+                </div>
+            </div>
+        </section>
+        <section class="padding-110px-tb xs-padding-60px-tb bg-light-gray builder-bg" id="subscribe-section6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 center-col col-sm-12 text-center">
+                        <h2 class="title-extra-large-2 letter-spacing-minus-1 text-dark-gray alt-font margin-four-bottom tz-text">Ready to get started?</h2>
+                        <div class="text-extra-large sm-text-extra-large text-medium-gray width-80 xs-width-100 center-col margin-twelve-bottom xs-margin-nineteen-bottom tz-text">
+						Join the <font color="black"><b>World's Largest B2B Fixed Departure Aggregators</b></font> and unlock the potential of cheapest flight fares, deals & discounts.</div>
+                    </div>
+                    <div class="col-md-6 center-col col-sm-12 text-center">
+                        <form action="javascript:void(0)" method="post">
+                            <input type="text" name="name" id="name" data-email="required" placeholder="Your Name" class="big-input bg-white alt-font border-radius-4">                    
+                            <input type="text" name="email" id="email" data-email="required" placeholder="Your Contact Number" class="big-input bg-white alt-font border-radius-4">
+                            <button type="submit" class="default-submit btn btn-extra-large2 propClone bg-deep-green btn-3d text-white width-100 builder-bg tz-text">REQUEST A CALLBACK</button>                                                    
+                        </form>
+                        <div class="margin-seven-top text-small2 sm-width-100 center-col tz-text xs-line-height-20">* We don't share your personal info with anyone. Check out our <a href="http://b2bfixeddepartures.com/privacy-policy" rel=”nofollow” target="_blank" class="text-decoration-underline tz-text">Privacy Policy</a> for more information.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padding-110px-tb bg-white builder-bg xs-padding-60px-tb" id="contact-section5">
+            <div class="container">
+                <div class="row four-column">
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-nine-bottom xs-margin-fifteen-bottom text-center sm-clear-both">
+                        <div class="feature-box xs-margin-thirteen xs-no-margin-tb">     
+                            <big><font color="black"><i class="fa fa-map"></i></font></big>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font display-block margin-three-bottom xs-margin-five-bottom tz-text font-weight-600" title="B2B Fixed Departures Office Address">Contact Address</h3>
+                            <div class="feature-text text-medium center-col tz-text" title="B2B Fixed Departures Office Address">P-3, Knowledge Park-II, Near AIC<br>Gr. Noida, GB Nagar, UP-201306.</div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-nine-bottom xs-margin-fifteen-bottom text-center">
+                        <div class="feature-box xs-margin-thirteen xs-no-margin-tb">
+                            <big><font color="black"><i class="fa fa-phone"></i></font></big>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font display-block margin-three-bottom xs-margin-five-bottom tz-text font-weight-600" title="B2B Fixed Departures Contact Number">Call Us Today!</h3>
+                            <div class="feature-text text-medium center-col tz-text" title="B2B Fixed Departures Contact Number">(O) +91 (8595) 9027 55 / 56 / 57<br>(O) +91 (9999) 355 993</div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center xs-margin-fifteen-bottom sm-clear-both">
+                        <div class="feature-box xs-margin-thirteen xs-no-margin-tb">
+                            <big><font color="black"><i class="fa fa-envelope"></i></font></big>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font display-block margin-three-bottom xs-margin-five-bottom tz-text font-weight-600" title="B2B Fixed Departures Business Mail">Email</h3>
+                            <div class="feature-text text-medium center-col" title="B2B Fixed Departures Business Mail"><a class="tz-text" href="mailto:info@b2bfixeddepartures.com">info@b2bfixeddepartures.com</a><br><a class="tz-text" href="mailto:care@fixeddeparturesflights.com">care@fixeddeparturesflights.com</a></div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                    <!-- feature box -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                        <div class="feature-box xs-margin-thirteen xs-no-margin-tb">
+                            <big><font color="black"><i class="fa fa-calendar"></i></font></big>
+                            <h3 class="feature-title text-dark-gray text-medium alt-font display-block margin-three-bottom xs-margin-five-bottom tz-text font-weight-600" title="B2B Fixed Departures Working Hours">Working Hours</h3>
+                            <div class="feature-text text-medium center-col tz-text" title="B2B Fixed Departures Working Hours">Mon to Fri - 11 AM to 5 PM<br>Sat - 11 AM to 2 PM</div>
+                        </div>
+                    </div>
+                    <!-- end feature box -->
+                </div>
+            </div>
+        </section>
+        <footer id="footer-section4" class="bg-white builder-bg padding-60px-tb xs-padding-40px-tb footer-style4">
+            <div class="container">
+                <div class="row equalize sm-equalize-auto">
+                    <!-- logo -->
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sm-text-center sm-margin-five-bottom xs-margin-nine-bottom display-table" style="height: 39px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <a href="http://b2bfixeddepartures.com/" target="_blank" class="inner-link"><img src="./img/b2b-fixed-departure-logo-symbol-dark.png" alt="b2b-fixed-departure-logo" title="B2B Fixed Departures Logo" height="80" width="220"></a>
+                        </div>
+                    </div>
+                    <!-- end logo -->
+                    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 sm-margin-three-bottom text-center xs-text-center display-table" style="height: 39px;">
+                        <div class="display-table-cell-vertical-middle">
+                            <span class="tz-text">© 2021 <a class="text-light-gray2" href="http://b2bfixeddepartures.com/" title="Visit : B2B Fixed Departures" target="_blank"><b><font color="black">B2B Fixed Departures</font></b></a></span>
+                        </div>
+                    </div>
+                    <!-- social elements -->
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-right sm-text-center display-table" style="height: 39px;">
+                        <div class="social icon-extra-small display-table-cell-vertical-middle">
+						
+                            <a href="https://www.facebook.com/b2bfixeddepartures" target="_blank" rel=”nofollow” class="margin-sixteen-right" title="B2B Fixed Departures Facebook Profile">
+                               <font color="black"><i class="fa fa-facebook tz-icon-color-black"></i></font>
+                            </a>
+                            <a href="https://twitter.com/b2bfixeddepartures" target="_blank" rel=”nofollow” class="margin-sixteen-right" title="B2B Fixed Departures Twitter Profile">
+                                <font color="black"><i class="fa fa-twitter tz-icon-color"></i></font>
+                            </a>
+                            <a href="https://www.instagram.com/b2bfixeddepartures/" target="_blank" rel=”nofollow” class="margin-sixteen-right" title="B2B Fixed Departures Instagram Profile">
+                                <font color="black"><i class="fa fa-instagram tz-icon-color"></i></font>
+                            </a>
+                            <a href="https://www.linkedin.com/company/b2bfixeddepartures" target="_blank" rel=”nofollow” class="margin-sixteen-right" title="B2B Fixed Departures Linked In Profile">
+                                <font color="black"><i class="fa fa-linkedin tz-icon-color"></i></font>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCqi_w8JlO-1VEmVUItvr8og" target="_blank" rel=”nofollow” class="margin-sixteen-right" title="B2B Fixed Departures Youtube Channel">
+                                <font color="black"><i class="fa fa-youtube tz-icon-color"></i></font>
+                            </a>
+                        </div>
+                    </div>                            
+                    <!-- end social elements -->
+                </div>
+            </div>
+        </footer>
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/jquery.appear.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/smooth-scroll.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/bootstrap.min.js') }}"></script>
+        <!-- wow animation -->
+        <script type="text/javascript" src="{{ asset('assets/wow.min.js') }}"></script>
+        <!-- owl carousel -->
+        <script type="text/javascript" src="{{ asset('assets/owl.carousel.min.js') }}"></script>        
+        <!-- images loaded -->
+        <script type="text/javascript" src="{{ asset('assets/imagesloaded.pkgd.min.js') }}"></script>
+        <!-- isotope -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.isotope.min.js') }}"></script> 
+        <!-- magnific popup -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.magnific-popup.min.js') }}"></script>
+        <!-- navigation -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.nav.js') }}"></script>
+        <!-- equalize -->
+        <script type="text/javascript" src="{{ asset('assets/equalize.min.js') }}"></script>
+        <!-- fit videos -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.fitvids.js') }}"></script>
+        <!-- number counter -->
+        <script type="text/javascript" src="{{ asset('assets/jquery.countTo.js') }}"></script>
+        <!-- time counter  -->
+        <script type="text/javascript" src="{{ asset('assets/counter.js') }}"></script>
+        <!-- twitter Fetcher  -->
+        <script type="text/javascript" src="{{ asset('assets/twitterFetcher_min.js') }}"></script>
+        <!-- main -->
+        <script type="text/javascript" src="{{ asset('assets/main.js') }}"></script>
+        <!-- purchase -->
+        <link rel="stylesheet" href="{{ asset('assets/purchase.css') }}">
+        <script type="text/javascript" src="{{ asset('assets/purchase.js') }}"></script>
+    
+
+
+
+</body></html>
