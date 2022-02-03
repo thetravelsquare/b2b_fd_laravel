@@ -193,7 +193,7 @@ top: 0;
 					<div class="kt-grid__item">
 						<div class="kt-login__info">
 							<div class="kt-login__copyright">
-								© 2021 B2B Fixed Departures
+								© 2022 B2B Fixed Departures
 							</div>
 							<div class="kt-login__menu">
 								<a href="http://b2bfixeddepartures.com/partner-help" class="kt-link">Partner Help</a>

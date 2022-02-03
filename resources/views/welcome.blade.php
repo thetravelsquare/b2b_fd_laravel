@@ -490,7 +490,7 @@
                     <!-- end logo -->
                     <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 sm-margin-three-bottom text-center xs-text-center display-table" style="height: 39px;">
                         <div class="display-table-cell-vertical-middle">
-                            <span class="tz-text">© 2021 <a class="text-light-gray2" href="http://b2bfixeddepartures.com/" title="Visit : B2B Fixed Departures" target="_blank"><b><font color="black">B2B Fixed Departures</font></b></a></span>
+                            <span class="tz-text">©  <span id="year"></span> <a class="text-light-gray2" href="http://b2bfixeddepartures.com/" title="Visit : B2B Fixed Departures" target="_blank"><b><font color="black">B2B Fixed Departures</font></b></a></span>
                         </div>
                     </div>
                     <!-- social elements -->
@@ -519,7 +519,7 @@
             </div>
         </footer>
         <!-- javascript libraries -->
-        <script type="text/javascript" src="{{ asset('assets/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('files/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/jquery.appear.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/smooth-scroll.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/bootstrap.min.js') }}"></script>
@@ -550,7 +550,7 @@
         <!-- purchase -->
         <link rel="stylesheet" href="{{ asset('assets/purchase.css') }}">
         <script type="text/javascript" src="{{ asset('assets/purchase.js') }}"></script>
-    
+        <script>$('#year').html(new Date().getFullYear());</script>
 
 
 
