@@ -103,7 +103,7 @@
 													<td>{{ $ifd->departure_time }}</td>	
 													<td>{{ $ifd->arrival_time }}</td>	
 													<td>{{ $ifd->adult_fare }}</td>	
-														<td data-field="Status" class="kt-datatable__cell"><span style="width: 146px;"><span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill" style="background-color:black">BOOK NOW</span></span></td>
+														<td data-field="Status" class="kt-datatable__cell"><span style="width: 146px;"><a href="{{ route('booking-review', ['id' => $ifd->id, 'airline' => $ifd->airline, 'flight_no' => $ifd->flight_no]) }}" class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill" style="background-color:black">BOOK NOW</a></span></td>
 												</tr>
 												@endforeach
 											</tbody>

@@ -174,7 +174,7 @@ top: 0;
         <!-- begin:: Header Mobile -->
         <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
             <div class="kt-header-mobile__logo">
-                <a href="http://b2bfixeddepartures.com/">
+                <a href="/dashboard">
                 <img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="160" height="45">
                 </a>
             </div>
@@ -193,7 +193,7 @@ top: 0;
                     <div class="kt-aside__brand kt-grid__item "  style="background-color:black;" id="kt_aside_brand" kt-hidden-height="85" style="">
                         
 						<div class="kt-aside__brand-logo" style="background-color:black;">
-                            <a href="http://b2bfixeddepartures.com/">
+                            <a href="/dashboard">
                             <br><img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="180" height="48">
                             </a>
                         </div>
@@ -225,7 +225,7 @@ top: 0;
                         <div id="kt_aside_menu" class="kt-aside-menu kt-scroll ps ps--active-y" style="background-color:black;" data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="height: 611px; overflow: hidden;">
                             <ul class="kt-menu__nav " style="background-color:black;">
                                 <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
-                                    <a href="http://b2bfixeddepartures.com/partnerdashboard" class="kt-menu__link ">
+                                    <a href="/dashboard" class="kt-menu__link ">
                                         <span class="kt-menu__link-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -723,7 +723,7 @@ top: 0;
                                     <!--end: Head -->
                                     <!--begin: Navigation -->
                                     <div class="kt-notification">
-                                        <a href="/partner-profile" class="kt-notification__item">
+                                        <a href="/profile" class="kt-notification__item">
                                             <div class="kt-notification__item-icon">
                                                 <i class="fa fa-user"></i>
                                             </div>
@@ -753,6 +753,20 @@ top: 0;
                         <!-- begin:: Content Head -->
                         <div class="kt-subheader  kt-grid__item" id="kt_subheader">
                             <div class="kt-container  kt-container--fluid ">
+                                @if(Route::is('booking-review') )
+                                <div class="kt-subheader__main">
+                                    <h3 class="kt-subheader__title">Departure Summary</h3>
+                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                                    <!-- <span class="kt-subheader__desc">{{ Auth::user()->partner_id }}</span> -->
+                                    
+                                    <div class="kt-input-icon kt-input-icon--right kt-subheader__search kt-hidden">
+                                        <input type="text" class="form-control" placeholder="Search order..." id="generalSearch">
+                                        <span class="kt-input-icon__icon kt-input-icon__icon--right">
+                                        <span><i class="flaticon2-search-1"></i></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Partner ID</h3>
                                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
@@ -765,16 +779,27 @@ top: 0;
                                         </span>
                                     </div>
                                 </div>
+                                @endif
+
+                                @if(Route::is('booking-review') )
+								<div class="kt-subheader__toolbar">
+									<div class="kt-subheader__wrapper">
+											<a href="" onclick="window.print()">
+											<button type="button" class="btn btn-dark">Itinerary PDF</button> 
+                                            </a>
+									</div>
+								</div>
+                                @else
                                 <div class="kt-subheader__toolbar">
                                     <div class="kt-subheader__wrapper">
-                                        <a href="http://b2bfixeddepartures.com/" class="btn kt-subheader__btn-daterange" id="kt_dashboard_daterangepicker" data-toggle="kt-tooltip" title="" data-placement="left" data-original-title="Bookings Calender">
+                                        <a href="http://b2bfixeddepartures.com/" class="btn btn-dark kt-subheader__btn-daterange" id="kt_dashboard_daterangepicker" data-toggle="kt-tooltip" title="" data-placement="left" data-original-title="Bookings Calender">
                                         <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Date : </span>&nbsp;
                                         <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">Mar 17</span>
-                                     
                                         </a>
                                         
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                         <!-- end:: Content Head -->	

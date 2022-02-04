@@ -7,6 +7,7 @@ use App\Http\Controllers\GroupFareController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RefundController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,11 @@ Route::get('partner-help', function(){return view('partner-help');})->name('part
 Route::get('deals', function(){return view('deals');})->name('deals')->middleware(['auth']);
 
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('auth');
-
+Route::get('/profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('profile')->middleware('auth');
 
 Route::get('bookings', [BookingController::class, 'index'])->name('bookings')->middleware(['auth']);
+Route::get('booking-review/b2b fixed {id} departure/{airline}/{flight_no}', [BookingController::class, 'bookingReview'])->name('booking-review')->middleware(['auth']);
 Route::get('domestic-fd', [FixedDepartureController::class, 'domestic'])->name('domestic')->middleware(['auth']);
 Route::get('international-fd', [FixedDepartureController::class, 'international'])->name('international')->middleware(['auth']);
 Route::get('transactions', [TransactionController::class, 'transactions'])->name('transactions')->middleware(['auth']);

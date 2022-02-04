@@ -104,7 +104,7 @@
                     <div class="row">
                         <!-- logo -->
                         <div class="col-md-3 col-sm-4 col-xs-6">
-                            <a href="http://propertymanager.b2bfixeddepartures.com/" class="inner-link"><img alt="b2b-fixed-departure-logo" src="http://b2bfixeddepartures.com/img/b2b-fixed-departure-logo-symbol.png"></a>
+                            <a href="/" class="inner-link"><img alt="b2b-fixed-departure-logo" src="http://b2bfixeddepartures.com/img/b2b-fixed-departure-logo-symbol.png"></a>
                         </div>
                         <!-- end logo -->
                         <div class="col-md-9 col-sm-8 col-xs-6 position-inherit xs-no-padding-left">
