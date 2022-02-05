@@ -1,5 +1,5 @@
 <?php 
-    if(Auth::user()->user_type != 'partner'){
+    if(Illuminate\Support\Facades\Auth::user()->user_type != 'partner'){
 ?>
 <script>
     window.location.href = "/dashboard"
@@ -169,13 +169,13 @@ top: 0;
 </style><script type="text/javascript" charset="UTF-8" src="./files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="http://partner.thetravelsquare.in/resource/admin/files/util.js.download"></script>    </head>
     <!-- end::Head -->
     <!-- begin::Body -->
-    <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed" style="">
+    <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed" >
         <!-- begin:: Page -->
         <!-- begin:: Header Mobile -->
         <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
             <div class="kt-header-mobile__logo">
                 <a href="/dashboard">
-                <img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="160" height="45">
+                <img alt="B2B Fixed Departure Flights" src="{{ asset('img/b2bfixeddepartures-logo.png') }}" width="160" height="45">
                 </a>
             </div>
             <div class="kt-header-mobile__toolbar">
@@ -190,11 +190,11 @@ top: 0;
                 <!-- begin:: Aside -->
                 <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" style="background-color:black;" id="kt_aside">
                     <!-- begin:: Aside -->
-                    <div class="kt-aside__brand kt-grid__item "  style="background-color:black;" id="kt_aside_brand" kt-hidden-height="85" style="">
+                    <div class="kt-aside__brand kt-grid__item "  style="background-color:black;" id="kt_aside_brand" kt-hidden-height="85" >
                         
 						<div class="kt-aside__brand-logo" style="background-color:black;">
                             <a href="/dashboard">
-                            <br><img alt="B2B Fixed Departure Flights" src="./img/b2bfixeddepartures-logo.png" width="180" height="48">
+                            <br><img alt="B2B Fixed Departure Flights" src="{{ asset('img/b2bfixeddepartures-logo.png') }}" width="180" height="48">
                             </a>
                         </div>
                         <div class="kt-aside__brand-tools" style="background-color:black;">
@@ -785,7 +785,7 @@ top: 0;
 								<div class="kt-subheader__toolbar">
 									<div class="kt-subheader__wrapper">
 											<a href="" onclick="window.print()">
-											<button type="button" class="btn btn-dark">Itinerary PDF</button> 
+											<button type="button" class="btn btn-dark noprint">Itinerary PDF</button> 
                                             </a>
 									</div>
 								</div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RefundController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('
 
 Route::get('bookings', [BookingController::class, 'index'])->name('bookings')->middleware(['auth']);
 Route::get('booking-review/b2b fixed {id} departure/{airline}/{flight_no}', [BookingController::class, 'bookingReview'])->name('booking-review')->middleware(['auth']);
+Route::post('confirm-booking/{id}', [BookingController::class, 'confirmBooking'])->name('confirm-booking')->middleware(['auth']);
+
 Route::get('domestic-fd', [FixedDepartureController::class, 'domestic'])->name('domestic')->middleware(['auth']);
 Route::get('international-fd', [FixedDepartureController::class, 'international'])->name('international')->middleware(['auth']);
 Route::get('transactions', [TransactionController::class, 'transactions'])->name('transactions')->middleware(['auth']);

@@ -1,5 +1,5 @@
 <?php 
-    if(Auth::user()->user_type != 'admin'){
+    if(Illuminate\Support\Facades\Auth::user()->user_type != 'admin'){
 ?>
 <script>
     window.location.href = "/dashboard"
@@ -126,8 +126,7 @@
 <!-- begin::Body -->
 
 <body
-    class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed"
-    style="">
+    class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed">
     <!-- begin:: Page -->
     <!-- begin:: Header Mobile -->
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
@@ -152,7 +151,7 @@
                 style="background-color:black;" id="kt_aside">
                 <!-- begin:: Aside -->
                 <div class="kt-aside__brand kt-grid__item " style="background-color:black;" id="kt_aside_brand"
-                    kt-hidden-height="85" style="">
+                    kt-hidden-height="85">
 
                     <div class="kt-aside__brand-logo" style="background-color:black;">
                         <a href="http://b2bfixeddepartures.com/">

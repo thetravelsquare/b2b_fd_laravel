@@ -24,7 +24,7 @@
 							<div class="kt-portlet kt-portlet--mobile">
 								<div class="kt-portlet__body kt-portlet__body">
 									<!--begin: Datatable -->
-									<div id="sub_datatable_ajax_source" class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--loaded" style="">
+									<div id="sub_datatable_ajax_source" class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--loaded">
 										
 																														                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 10; width: 90%; background-color:white;">
                                                 <thead>

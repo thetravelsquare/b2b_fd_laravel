@@ -117,7 +117,7 @@
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
         <!--begin: Datatable -->
         <div id="sub_datatable_ajax_source"
-            class="table-responsive" style="">
+            class="table-responsive">
 
             <table class="table table-bordered"
                 style="border-collapse: collapse; border-spacing: 10; width: 100%; background-color:white;">
@@ -209,7 +209,7 @@
     <div id="kt_quick_panel" class="kt-quick-panel">
         <a href="http://b2bfixeddepartures.com/" class="kt-quick-panel__close" id="kt_quick_panel_close_btn"><i
                 class="flaticon2-delete"></i></a>
-        <div class="kt-quick-panel__nav" kt-hidden-height="66" style="">
+        <div class="kt-quick-panel__nav" kt-hidden-height="66">
             <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x"
                 role="tablist">
                 <li class="nav-item active">
