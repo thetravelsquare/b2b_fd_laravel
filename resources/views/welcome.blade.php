@@ -519,7 +519,7 @@
             </div>
         </footer>
         <!-- javascript libraries -->
-        <script type="text/javascript" src="{{ asset('files/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/jquery.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/jquery.appear.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/smooth-scroll.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/bootstrap.min.js') }}"></script>

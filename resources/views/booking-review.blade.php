@@ -171,30 +171,21 @@
                         </div>
                     </div>
                     <!--begin::Form-->
+
+                    @if(is_numeric($df->adult_fare))
                     <form action="{{ route('confirm-booking', $df->id) }}" class="kt-form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                    <!-- <form action="{{ route('razorpay.payment.store', $df->id) }}" class="kt-form" enctype="multipart/form-data" method="post" accept-charset="utf-8"> -->
                         @csrf
+                        <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"
+                                 data-key="{{ env('RAZORPAY_KEY') }}"
+                                 data-amount="{{100*100}}" 
+                                 data-currency="INR"
+                                 data-name="realprogrammer.in"
+                                 data-prefill.name="name"
+                                 data-prefill.email="email"
+                                 data-theme.color="#F37254"></script> -->
                         <div class="kt-portlet__body">
                             <div class="kt-section kt-section--first">
-                                <!-- <div class="form-group">
-                                    <label>Select Number of Passengers</label>
-                                    <select class="custom-select form-control">
-                                        <option selected="selected">Select</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                    </select>
-                                </div> -->
-
                                 <table style="width: 100%;">
                                     <thead>
                                         <tr>
@@ -220,6 +211,11 @@
                             </div>
                         </div>
                     </form>
+                    @else
+                    <div class="text-center p-4">
+                        <h4>You can book this departure on call. <a style="text-decoration: underline;" class="text-primary" href="tel: +918700571934">Call Now</a></h4>
+                    </div>
+                    @endif
                     <!--end::Form-->
                 </div>
                 <!--end::Portlet-->
