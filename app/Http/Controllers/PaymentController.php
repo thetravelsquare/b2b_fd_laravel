@@ -12,7 +12,7 @@ use Redirect;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
-{  public function payment(Request $request, $ifd)
+{  public function payment(Request $request, $ifd, $total)
     {
         $fd = FixedDeparture::where('id', $ifd)->first();
         $input = $request->all();
@@ -71,7 +71,6 @@ class PaymentController extends Controller
         $payments->transaction_id = $input['razorpay_payment_id'];
         $payments->mode = 'online';
         $payments->amount = substr($payment['amount'], 0, -2);
-        \Log::info($payments);
         if($success){
             $payments->status = 'success';
         }else{
@@ -79,8 +78,6 @@ class PaymentController extends Controller
         }
         $payments->fd_id = $fd->fd_id;
         if($payments->save()){
-            $payments->payment_id = $payments->id;
-            $payments->save();
             return redirect()->route('transactions')->with('success', 'Your booking confirmed');
         }
     }

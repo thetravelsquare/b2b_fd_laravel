@@ -42,7 +42,7 @@ Route::get('bookings', [BookingController::class, 'index'])->name('bookings')->m
 Route::get('booking-review/b2b fixed {id} departure/{airline}/{flight_no}', [BookingController::class, 'bookingReview'])->name('booking-review')->middleware(['auth']);
 Route::post('confirm-booking/{id}', [BookingController::class, 'confirmBooking'])->name('confirm-booking')->middleware(['auth']);
 
-Route::post('payment/{ifd}', [PaymentController::class, 'payment'])->name('razorpay.payment.store');
+Route::post('payment/{ifd}/{total}', [PaymentController::class, 'payment'])->name('razorpay.payment.store');
 
 Route::get('domestic-fd', [FixedDepartureController::class, 'domestic'])->name('domestic')->middleware(['auth']);
 Route::get('international-fd', [FixedDepartureController::class, 'international'])->name('international')->middleware(['auth']);
