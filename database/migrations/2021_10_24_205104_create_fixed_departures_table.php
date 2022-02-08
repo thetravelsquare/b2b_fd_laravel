@@ -30,7 +30,7 @@ class CreateFixedDeparturesTable extends Migration
             $table->string('sector');
             $table->string('international_or_domestic');
             $table->string('adult_fare');
-            $table->string('child_fare');
+            $table->string('child_fare')->default(0);
             $table->string('service_fee');
             $table->string('fare_type');
             $table->string('rescheduling_fee');
