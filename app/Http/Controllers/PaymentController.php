@@ -12,10 +12,11 @@ use Redirect;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
-{  public function payment(Request $request, $ifd, $total)
-    {
+{  
+    public function payment(Request $request, $ifd, $total){
         $fd = FixedDeparture::where('id', $ifd)->first();
         $input = $request->all();
+        \Log::info($input);
         $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
         $payment = $api->payment->fetch($input['razorpay_payment_id']);
         if(count($input)  && !empty($input['razorpay_payment_id'])) {
@@ -29,16 +30,6 @@ class PaymentController extends Controller
         }
         Session::put('success', 'Payment successful');
         $success = $request->session()->get('success');
-        
-        // $transactions = new Transaction;
-        // $transactions->user_id = Auth::user()->id;
-        // $transactions->partner_id = Auth::user()->partner_id;
-        // $transactions->amount = substr($payment['amount'], 0, -2);
-        // if($success){
-        //     $transactions->status = 'success';
-        // }else{
-        //     $transactions->status = 'failed';
-        // }
         
         $payments = new Payment;
         $payments->partner_id = Auth::user()->partner_id;
@@ -66,10 +57,13 @@ class PaymentController extends Controller
         $payments->price = $fd->adult_fare;
         $payments->amount = $total;
         $payments->status = $fd->status;
-        $payments->transaction_id = $fd->transaction_id;
-        $payments->mode = $fd->mode;
         $payments->transaction_id = $input['razorpay_payment_id'];
         $payments->mode = 'online';
+
+        $booking = new Booking;
+        $booking->partner_id = Auth::user()->partner_id;
+        $payments->transaction_id = $input['razorpay_payment_id'];
+
         $payments->amount = substr($payment['amount'], 0, -2);
         if($success){
             $payments->status = 'success';

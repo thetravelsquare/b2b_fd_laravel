@@ -175,14 +175,6 @@
                     @if(is_numeric($df->adult_fare))
                     <form action="{{ route('confirm-booking', $df->id) }}" class="kt-form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                         @csrf
-                        <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"
-                                 data-key="{{ env('RAZORPAY_KEY') }}"
-                                 data-amount="{{100*100}}" 
-                                 data-currency="INR"
-                                 data-name="realprogrammer.in"
-                                 data-prefill.name="name"
-                                 data-prefill.email="email"
-                                 data-theme.color="#F37254"></script> -->
                         <div class="kt-portlet__body">
                             <div class="kt-section kt-section--first">
                                 <table style="width: 100%;">
