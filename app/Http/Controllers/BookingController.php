@@ -22,11 +22,11 @@ class BookingController extends Controller
 
     public function confirmBooking(Request $request, $id){
         $df = FixedDeparture::where('id', $id)->first();
-        $total = $df->adult_fare * count($request->passenger_name) + $df->service_fee;
+        $total = $df->adult_fare * count($request->passenger_name) + $df->service_fee * count($request->passenger_name);
         $requests = $request->all();
         session()->put('passenger_name', $request->passenger_name);
         session()->put('pax', count($request->passenger_name));
-        session()->put('passenger_dob', count($request->passenger_dob));
+        session()->put('passenger_dob', $request->passenger_dob);
         return view('confirm-booking', compact('df', 'total', 'requests'));
         // dd($request->all());
         // dd(count($request->passenger_name));

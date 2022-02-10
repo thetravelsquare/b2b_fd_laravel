@@ -151,8 +151,8 @@
                         <table class="table table-bordered ">
                             <tr>
                                 <th>Total</th>
-                                <td>Fare x Passengers + Service Fee = Total</td>
-                                <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} + ₹{{ $df->service_fee }} = ₹{{ $total }}</td>
+                                <td>Fare x Passengers + Service Fee x Passengers = Total</td>
+                                <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
                             </tr>
                         </table>
                     </div>

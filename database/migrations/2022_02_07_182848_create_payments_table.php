@@ -17,6 +17,9 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->string('partner_id');
+            $table->json('customer_name');
+            $table->json('customer_dob');
+            $table->string('pax');
             $table->string('airline');
             $table->string('flight_no');
             $table->string('departure_from');

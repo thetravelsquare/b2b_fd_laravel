@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Razorpay\Api\Api;
 use App\Models\Payment;
+use App\Models\Booking;
 use App\Models\FixedDeparture;
 use App\Models\Transaction;
 use Session;
@@ -36,7 +37,7 @@ class PaymentController extends Controller
         $payments->user_id = Auth::user()->id;
         $payments->airline = $fd->airline;
         $payments->flight_no = $fd->flight_no;
-        $payments->departure_from = $fd->flight_no;
+        $payments->departure_from = $fd->departure_from;
         $payments->arrival_to = $fd->arrival_to;
         $payments->departure_time = $fd->departure_time;
         $payments->arrival_time = $fd->arrival_time;
@@ -56,23 +57,59 @@ class PaymentController extends Controller
         $payments->cancellation_fee = $fd->cancellation_fee;
         $payments->price = $fd->adult_fare;
         $payments->amount = $total;
-        $payments->status = $fd->status;
+        $payments->customer_name = json_encode(session()->get('passenger_name'));
+        $payments->customer_dob = json_encode(session()->get('passenger_dob'));
+        $payments->pax = session()->get('pax');
         $payments->transaction_id = $input['razorpay_payment_id'];
         $payments->mode = 'online';
 
         $booking = new Booking;
         $booking->partner_id = Auth::user()->partner_id;
-        $payments->transaction_id = $input['razorpay_payment_id'];
+        $booking->transaction_id = $input['razorpay_payment_id'];
+        $booking->date = date("Y/m/d");
+        $booking->customer_name = json_encode(session()->get('passenger_name'));
+        $booking->customer_dob = json_encode(session()->get('passenger_dob'));
+        $booking->departure = $fd->departure_from;
+        $booking->arrival = $fd->arrival_to;
+        $booking->type = $fd->flight_type;
+        $booking->departure_date = $fd->departure_date;
+        $booking->arrival_date = $fd->arrival_date;
+        $booking->amount = $total;
+        $booking->fd_id = $fd->fd_id;
+        $booking->pax = session()->get('pax');
+        $booking->mode = 'online';
 
         $payments->amount = substr($payment['amount'], 0, -2);
         if($success){
             $payments->status = 'success';
+            $booking->status = 'success';
+            $booking->payment_id = $payment->id;
+            if($fd->international_or_domestic == 'international'){
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+            }else{
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFDFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+            }
+            $booking->save();
+            $payments->save();
         }else{
             $payments->status = 'failed';
+            $booking->status = 'failed';
+            $booking->payment_id = $payment->id;
+            if($fd->international_or_domestic == 'international'){
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+            }else{
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFDFD';
+            }
+            $booking->save();
+            $payments->save();
         }
         $payments->fd_id = $fd->fd_id;
         if($payments->save()){
-            return redirect()->route('transactions')->with('success', 'Your booking confirmed');
+            return redirect()->route('bookings')->with('success', 'Your booking confirmed');
+        }else{
+            return redirect()->route('bookings')->with('error', 'Something Went Wrong');
         }
     }
 }
