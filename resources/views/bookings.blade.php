@@ -96,7 +96,7 @@
                                                         <label for="partner_id">Customer Name</label>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        @foreach (json_decode($booking->customer_name) as $customer_name)
+                                                        @foreach (json_decode($booking->customer_name) as $key => $customer_name)
                                                             {{ $customer_name }} ({{ json_decode($booking->customer_dob)[$key] }}) <br>
                                                         @endforeach
                                                     </div>
