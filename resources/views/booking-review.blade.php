@@ -190,14 +190,14 @@
                                     <tbody id="TextBoxContainer"></tbody>
                                 </table>
                                 <div class="kt-form__actions float-right">
-                                    <button id="btnAdd" type="button" class="btn btn-primary btn-sm mt-4">Add More Passengers +</button>
+                                    <button id="btnAdd" type="button" class="btn btn-dark btn-sm mt-4">Add More Passengers +</button>
                                     <!-- <button id="btnAdd" type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Add more controls">&nbsp; Add More Passengers +&nbsp;</button> -->
                                 </div>
                             </div>
                         </div>
                         <div class="kt-portlet__foot">
                             <div class="kt-form__actions">
-                                <button type="submit" class="btn btn-primary">Go To Payment</button>
+                                <button type="submit" class="btn btn-dark btn-sm">Go To Payment</button>
                                 {{-- <button type="submit" class="btn btn-primary">Confirm Booking</button> --}}
                                 <!-- <button type="reset" class="btn btn-secondary">Cancel</button> -->
                             </div>

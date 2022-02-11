@@ -22,6 +22,56 @@
                 }
             }
         </style>
+
+        {{-- <div class="card">
+            <div class="p-4">
+                <div class="row bg-dark p-2 text-light">
+                    <div class="col-6 col-md-6">Passenger Name</div>
+                    <div class="col-6 col-md-6">Passenger DOB</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-6 col-md-6">
+                        @foreach ($requests['passenger_name'] as $passenger_name)
+                            <div class="text-dark p-2 border-top">{{ $passenger_name }}</div>
+                        @endforeach
+                    </div>
+                    <div class="col-6 col-md-6">
+                        @foreach ($requests['passenger_dob'] as $passenger_dob)
+                            <div class="text-dark p-2 border-top">{{ $passenger_dob }}</div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+
+
+        <div class="kt-portlet kt-portlet--mobile">
+            <div class="kt-portlet__body kt-portlet__body">
+                <div class="col-md-12">
+                    <h4 class="kt-subheader__title">Passenger Details</h4>
+                </div>
+                <div class="p-4">
+                    <div class="row bg-dark p-2 text-light">
+                        <div class="col-6 col-md-6">Passenger Name</div>
+                        <div class="col-6 col-md-6">Passenger DOB</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-6 col-md-6">
+                            @foreach ($requests['passenger_name'] as $passenger_name)
+                                <div class="text-dark p-2 border-top">{{ $passenger_name }}</div>
+                            @endforeach
+                        </div>
+                        <div class="col-6 col-md-6">
+                            @foreach ($requests['passenger_dob'] as $passenger_dob)
+                                <div class="text-dark p-2 border-top">{{ $passenger_dob }}</div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="kt-portlet kt-portlet--mobile">
             <div class="kt-portlet__body kt-portlet__body">
                 <div class="row">
@@ -155,26 +205,6 @@
                                 <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
                             </tr>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="p-4">
-                <div class="row bg-dark p-2 text-light">
-                    <div class="col-6 col-md-6">Passenger Name</div>
-                    <div class="col-6 col-md-6">Passenger DOB</div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-6 col-md-6">
-                        @foreach ($requests['passenger_name'] as $passenger_name)
-                            <div class="text-dark p-2 border-top">{{ $passenger_name }}</div>
-                        @endforeach
-                    </div>
-                    <div class="col-6 col-md-6">
-                        @foreach ($requests['passenger_dob'] as $passenger_dob)
-                            <div class="text-dark p-2 border-top">{{ $passenger_dob }}</div>
-                        @endforeach
                     </div>
                 </div>
             </div>
