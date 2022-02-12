@@ -104,11 +104,11 @@
                         </tr>
                         <tr>
                             <th>Child Fare</th>
-                            <td>₹ {{ $df->adult_fare }} Per Child</td>
+                            <td>₹ {{ $df->child_fare }} Per Child</td>
                         </tr>
                         <tr>
                             <th>Service Fee</th>
-                            <td>₹ 100 Per Pax</td>
+                            <td>₹{{ $df->service_fee }} Per Pax</td>
                         </tr>
 
                     </table>
@@ -254,81 +254,6 @@
                 <a class="nav-link active" data-toggle="tab" href="http://b2bfixeddepartures.com/kt_quick_panel_tab_notifications" role="tab">PARTNER DEDICATED SUPPORT</a>
             </li>
         </ul>
-    </div>
-    <div class="kt-quick-panel__content">
-        <div class="tab-content">
-            <div class="tab-pane fade show kt-scroll active ps ps--active-y" id="kt_quick_panel_tab_notifications" role="tabpanel" style="height: 592px; overflow: hidden;">
-                <div class="kt-notification">
-                    <a href="#" class="kt-notification__item">
-                        <div class="kt-notification__item-icon">
-                            <i class="flaticon2-line-chart kt-font-success"></i>
-                        </div>
-                        <div class="kt-notification__item-details">
-                            <div class="kt-notification__item-title">
-                                Manager Name
-                            </div>
-                            <div class="kt-notification__item-time">
-                                Mr. Kunal Aggarwal
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="#" class="kt-notification__item">
-                        <div class="kt-notification__item-icon">
-                            <i class="flaticon2-favourite kt-font-danger"></i>
-                        </div>
-                        <div class="kt-notification__item-details">
-                            <div class="kt-notification__item-title">
-                                Designation
-                            </div>
-                            <div class="kt-notification__item-time">
-                                Reservation Head (Aviations)
-                            </div>
-                        </div>
-                    </a>
-                    <a href="tel:01143680216" class="kt-notification__item">
-                        <div class="kt-notification__item-icon">
-                            <i class="flaticon2-safe kt-font-primary"></i>
-                        </div>
-                        <div class="kt-notification__item-details">
-                            <div class="kt-notification__item-title">
-                                Desk Contact
-                            </div>
-                            <div class="kt-notification__item-time">
-                                +91-011-436-802-16
-                            </div>
-                        </div>
-                    </a>
-                    <a href="tel:9999007037" class="kt-notification__item">
-                        <div class="kt-notification__item-icon">
-                            <i class="flaticon2-psd kt-font-success"></i>
-                        </div>
-                        <div class="kt-notification__item-details">
-                            <div class="kt-notification__item-title">
-                                Office Contact
-                            </div>
-                            <div class="kt-notification__item-time">
-                                +91-9999-355-993
-                            </div>
-                        </div>
-                    </a>
-                    <a href="mailto:kunal@instawiremoney.com" class="kt-notification__item">
-                        <div class="kt-notification__item-icon">
-                            <i class="flaticon-download-1 kt-font-danger"></i>
-                        </div>
-                        <div class="kt-notification__item-details">
-                            <div class="kt-notification__item-title">
-                                Mail Id
-                            </div>
-                            <div class="kt-notification__item-time">
-                                kunal@b2bfixeddepartures.com
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- end::Quick Panel -->

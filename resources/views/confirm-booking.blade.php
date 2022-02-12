@@ -1,3 +1,17 @@
+<?php 
+// dd($total);
+    $child_count = 0;
+    foreach(session()->get('age') as $age){
+        if($age->format('%y') < 2){
+            $child_count++;
+        }
+    }
+    if($child_count > 0){
+        $child_fare = $df->child_fare * $child_count;
+    }else{
+        $child_fare = 0;
+    }
+?>
 @extends('layouts.header')
 @section('content')
     <!-- begin:: Content -->
@@ -23,28 +37,6 @@
             }
         </style>
 
-        {{-- <div class="card">
-            <div class="p-4">
-                <div class="row bg-dark p-2 text-light">
-                    <div class="col-6 col-md-6">Passenger Name</div>
-                    <div class="col-6 col-md-6">Passenger DOB</div>
-                </div>
-                <div class="row p-2">
-                    <div class="col-6 col-md-6">
-                        @foreach ($requests['passenger_name'] as $passenger_name)
-                            <div class="text-dark p-2 border-top">{{ $passenger_name }}</div>
-                        @endforeach
-                    </div>
-                    <div class="col-6 col-md-6">
-                        @foreach ($requests['passenger_dob'] as $passenger_dob)
-                            <div class="text-dark p-2 border-top">{{ $passenger_dob }}</div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-
 
         <div class="kt-portlet kt-portlet--mobile">
             <div class="kt-portlet__body kt-portlet__body">
@@ -63,8 +55,8 @@
                             @endforeach
                         </div>
                         <div class="col-6 col-md-6">
-                            @foreach ($requests['passenger_dob'] as $passenger_dob)
-                                <div class="text-dark p-2 border-top">{{ $passenger_dob }}</div>
+                            @foreach ($requests['passenger_dob'] as $key => $passenger_dob)
+                                <div class="text-dark p-2 border-top">{{ $passenger_dob }} ({{ session()->get('age')[$key]->format('%Y'); }} year old)  </div>
                             @endforeach
                         </div>
                     </div>
@@ -149,16 +141,15 @@
                             </tr>
                             <tr>
                                 <th>Child Fare</th>
-                                <td>₹ {{ $df->adult_fare }} Per Child</td>
+                                <td>₹ {{ $df->child_fare }} Per Child</td>
                             </tr>
                             <tr>
                                 <th>Service Fee</th>
-                                <td>₹ 100 Per Pax</td>
+                                <td>₹{{ $df->service_fee}} Per Pax</td>
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} +
-                                    {{ $df->service_fee }} = ₹{{ $total }}</td>
+                                <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) - $child_count }} + {{ $df->child_fare }} * {{ $child_count }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
                             </tr>
                         </table>
                     </div>
@@ -201,8 +192,16 @@
                         <table class="table table-bordered ">
                             <tr>
                                 <th>Total</th>
+                                @if($child_count > 0)
+                                <td>Adult Fare x Adults + Child Fare x Children + Service Fee x Total Passengers = Total</td>
+                                @else
                                 <td>Fare x Passengers + Service Fee x Passengers = Total</td>
-                                <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
+                                @endif
+                                    @if($child_count > 0)
+                                        <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) - $child_count }} + {{ $df->child_fare }} * {{ $child_count }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
+                                    @else
+                                        <td>₹{{ $df->adult_fare }} x {{ count($requests['passenger_name']) }} + ₹{{ $df->service_fee }} x {{ count($requests['passenger_name']) }} = ₹{{ $total }}</td>
+                                    @endif
                             </tr>
                         </table>
                     </div>
@@ -253,98 +252,6 @@
     </div>
     </div>
     <!-- end:: Page -->
-    <!-- begin::Quick Panel -->
-    <div id="kt_quick_panel" class="kt-quick-panel">
-        <a href="http://b2bfixeddepartures.com/" class="kt-quick-panel__close" id="kt_quick_panel_close_btn"><i
-                class="flaticon2-delete"></i></a>
-        <div class="kt-quick-panel__nav" kt-hidden-height="66">
-            <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x"
-                role="tablist">
-                <li class="nav-item active">
-                    <a class="nav-link active" data-toggle="tab"
-                        href="http://b2bfixeddepartures.com/kt_quick_panel_tab_notifications" role="tab">PARTNER DEDICATED
-                        SUPPORT</a>
-                </li>
-            </ul>
-        </div>
-        <div class="kt-quick-panel__content">
-            <div class="tab-content">
-                <div class="tab-pane fade show kt-scroll active ps ps--active-y" id="kt_quick_panel_tab_notifications"
-                    role="tabpanel" style="height: 592px; overflow: hidden;">
-                    <div class="kt-notification">
-                        <a href="#" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-line-chart kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title">
-                                    Manager Name
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Mr. Kunal Aggarwal
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-favourite kt-font-danger"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title">
-                                    Designation
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    Reservation Head (Aviations)
-                                </div>
-                            </div>
-                        </a>
-                        <a href="tel:01143680216" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-safe kt-font-primary"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title">
-                                    Desk Contact
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    +91-011-436-802-16
-                                </div>
-                            </div>
-                        </a>
-                        <a href="tel:9999007037" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon2-psd kt-font-success"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title">
-                                    Office Contact
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    +91-9999-355-993
-                                </div>
-                            </div>
-                        </a>
-                        <a href="mailto:kunal@instawiremoney.com" class="kt-notification__item">
-                            <div class="kt-notification__item-icon">
-                                <i class="flaticon-download-1 kt-font-danger"></i>
-                            </div>
-                            <div class="kt-notification__item-details">
-                                <div class="kt-notification__item-title">
-                                    Mail Id
-                                </div>
-                                <div class="kt-notification__item-time">
-                                    kunal@b2bfixeddepartures.com
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end::Quick Panel -->
     <!-- begin::Scrolltop -->
     <div id="kt_scrolltop" class="kt-scrolltop">
         <i class="fa fa-arrow-up"></i>

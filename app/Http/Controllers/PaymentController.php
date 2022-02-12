@@ -85,11 +85,11 @@ class PaymentController extends Controller
             $booking->status = 'success';
             $booking->payment_id = $payment->id;
             if($fd->international_or_domestic == 'international'){
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
             }else{
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFDFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
             }
             $booking->save();
             $payments->save();
@@ -98,9 +98,11 @@ class PaymentController extends Controller
             $booking->status = 'failed';
             $booking->payment_id = $payment->id;
             if($fd->international_or_domestic == 'international'){
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFIFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
             }else{
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '1', STR_PAD_LEFT).'BFDFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
             }
             $booking->save();
             $payments->save();
