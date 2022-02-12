@@ -11,13 +11,13 @@ use App\Models\Transaction;
 use Session;
 use Redirect;
 use Illuminate\Support\Facades\Auth;
+use Str;
 
 class PaymentController extends Controller
 {  
     public function payment(Request $request, $ifd, $total){
         $fd = FixedDeparture::where('id', $ifd)->first();
         $input = $request->all();
-        \Log::info($input);
         $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
         $payment = $api->payment->fetch($input['razorpay_payment_id']);
         if(count($input)  && !empty($input['razorpay_payment_id'])) {
@@ -84,25 +84,28 @@ class PaymentController extends Controller
             $payments->status = 'success';
             $booking->status = 'success';
             $booking->payment_id = $payment->id;
-            if($fd->international_or_domestic == 'international'){
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
+            $booking->save();
+            $payments->save();
+            if(Str::lower($fd->international_or_domestic) == 'international'){
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFIFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFIFD';
             }else{
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFDFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFDFD';
             }
+
             $booking->save();
             $payments->save();
         }else{
             $payments->status = 'failed';
             $booking->status = 'failed';
             $booking->payment_id = $payment->id;
-            if($fd->international_or_domestic == 'international'){
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFIFD';
+            if(Str::lower($fd->international_or_domestic) == 'international'){
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFIFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFIFD';
             }else{
-                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
-                $booking->pnr = 'TSB'.str_pad($payments->id, 5, '0', STR_PAD_LEFT).'BFDFD';
+                $booking->booking_id = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFDFD';
+                $booking->pnr = 'TSB'.str_pad($payments->id, 5, 0, STR_PAD_LEFT).'BFDFD';
             }
             $booking->save();
             $payments->save();
