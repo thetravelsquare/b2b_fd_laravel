@@ -28,6 +28,6 @@ class FixedDepartureController extends Controller
 
     public function fileImport(Request $request){
         Excel::import(new FDImport, $request->file('file')->store('temp'));
-        return back();
+        return back()->with('success', 'FDs Uploaded Successfully');
     }
 }
